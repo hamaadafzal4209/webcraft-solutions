@@ -19,11 +19,13 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={cn(
-        "min-h-screen bg-dark-300 font-sans antialiased",
+        "min-h-screen font-sans antialiased",
         poppins.variable
       )}
     >
-      <body className="font-poppins">{children}</body>
+      <body className="font-poppins bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-gray-100">
+        {children}
+      </body>
     </html>
   );
 }
