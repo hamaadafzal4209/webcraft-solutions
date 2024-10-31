@@ -1,89 +1,176 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
-import { Menu, X } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
+import React, { useState } from "react";
+import Link from "next/link";
 import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet"
+  Menu,
+  X,
+  ChevronDown,
+  Laptop,
+  Megaphone,
+  Palette,
+  Code,
+  Globe,
+  PieChart,
+  TrendingUp,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 
 const navItems = [
-  { name: "Home", href: "/" },
-  { name: "Services", href: "/services" },
-  { name: "Portfolio", href: "/portfolio" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
-]
+  {
+    title: "Services",
+    items: [
+      {
+        title: "Web Development",
+        href: "/services/web-development",
+        icon: Laptop,
+      },
+      {
+        title: "App Development",
+        href: "/services/app-development",
+        icon: Megaphone,
+      },
+      {
+        title: "Digital Marketing",
+        href: "/services/digital-marketing",
+        icon: Palette,
+      },
+      { title: "SEO Campaigns", href: "/services/seo-campaigns", icon: Code },
+    ],
+  },
+  { title: "About", href: "/about" },
+  { title: "Portfolio", href: "/portfolio" },
+  { title: "Blog", href: "/blog" },
+  { title: "Contact", href: "/contact" },
+];
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = React.useState(false)
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-900 text-white">
+    <nav className="bg-gray-900 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0">
-              <svg className="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+              <span className="text-2xl font-bold text-white">WebCraft</span>
             </Link>
-            <div className="hidden md:block ml-10 items-baseline space-x-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="relative px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ease-in-out hover:bg-gray-800 group"
-                >
-                  {item.name}
-                  <span className="absolute inset-x-0 bottom-0 h-0.5 bg-blue-500 transform origin-left scale-x-0 transition-transform duration-200 ease-in-out group-hover:scale-x-100"></span>
-                </Link>
-              ))}
-            </div>
           </div>
           <div className="hidden md:block">
-            <Button variant="outline" className="text-white border-white hover:bg-gray-800 hover:text-white">
-              Get a Quote
-            </Button>
+            <div className="ml-10 flex items-baseline space-x-4">
+              {navItems.map((item) =>
+                item.items ? (
+                  <DropdownMenu key={item.title}>
+                    <DropdownMenuTrigger asChild>
+                      <Button
+                        variant="ghost"
+                        className="text-gray-300 hover:text-teal-400 transition-colors duration-300"
+                      >
+                        {item.title} <ChevronDown className="ml-1 h-4 w-4" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent
+                      align="end"
+                      className="bg-gray-800 text-gray-300"
+                    >
+                      {item.items.map((subItem) => (
+                        <DropdownMenuItem key={subItem.title} asChild>
+                          <Link
+                            href={subItem.href}
+                            className="flex items-center px-4 py-2 transition-colors duration-200 hover:bg-teal-400 hover:text-white rounded-md"
+                          >
+                            <subItem.icon className="mr-2 h-4 w-4" />
+                            <span>{subItem.title}</span>
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                ) : (
+                  <Link
+                    key={item.title}
+                    href={item.href}
+                    className="text-gray-300 hover:text-teal-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+                  >
+                    {item.title}
+                  </Link>
+                )
+              )}
+            </div>
           </div>
           <div className="md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" className="px-2 text-white hover:bg-gray-800">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-gray-300 hover:text-teal-400"
+                >
                   <span className="sr-only">Open main menu</span>
-                  <Menu className="h-6 w-6" aria-hidden="true" />
+                  {isOpen ? (
+                    <X className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <Menu className="block h-6 w-6" aria-hidden="true" />
+                  )}
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] bg-gray-900 text-white">
-                <div className="flex items-center justify-between mb-8">
-                  <Link href="/" className="flex-shrink-0" onClick={() => setIsOpen(false)}>
-                    <svg className="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </Link>
-                  <Button variant="ghost" className="px-2 text-white hover:bg-gray-800" onClick={() => setIsOpen(false)}>
-                    <span className="sr-only">Close main menu</span>
-                    <X className="h-6 w-6" aria-hidden="true" />
-                  </Button>
-                </div>
-                <nav className="flex flex-col space-y-4">
-                  {navItems.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="px-3 py-2 rounded-md text-base font-medium hover:bg-gray-800 transition-colors duration-200 ease-in-out"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                  <Button variant="outline" className="text-white border-white hover:bg-gray-800 hover:text-white">
-                    Get a Quote
-                  </Button>
+              <SheetContent
+                side="right"
+                className="w-[300px] sm:w-[400px] bg-gray-900 text-gray-300"
+              >
+                <nav className="mt-5 px-2 space-y-1">
+                  <Accordion type="single" collapsible>
+                    {navItems.map((item) =>
+                      item.items ? (
+                        <AccordionItem
+                          key={item.title}
+                          value={item.title}
+                          className="border-0"
+                        >
+                          <AccordionTrigger className="text-left px-3 py-2 text-gray-300 hover:text-teal-400 transition-colors duration-300">
+                            {item.title}
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <ul className="mt-2 space-y-1">
+                              {item.items.map((subItem) => (
+                                <li key={subItem.title}>
+                                  <Link
+                                    href={subItem.href}
+                                    className="flex items-center px-4 py-2 transition-colors duration-200 hover:bg-teal-400 hover:text-white rounded-md"
+                                  >
+                                    <subItem.icon className="mr-2 h-4 w-4" />
+                                    {subItem.title}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </AccordionContent>
+                        </AccordionItem>
+                      ) : (
+                        <Link
+                          key={item.title}
+                          href={item.href}
+                          className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-teal-400 transition-colors duration-300"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {item.title}
+                        </Link>
+                      )
+                    )}
+                  </Accordion>
                 </nav>
               </SheetContent>
             </Sheet>
@@ -91,5 +178,5 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
-  )
+  );
 }
