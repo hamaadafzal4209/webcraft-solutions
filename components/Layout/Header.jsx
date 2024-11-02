@@ -61,9 +61,9 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-900 shadow-md">
+    <nav className="bg-gray-900 shadow-lg sticky top-0 left-0 right-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0">
               <span className="text-2xl font-bold text-white">WebCraft</span>
@@ -77,7 +77,7 @@ export default function Header() {
                     <DropdownMenuTrigger asChild>
                       <Button
                         variant="ghost"
-                        className="text-gray-300 hover:text-teal-400 transition-colors duration-300"
+                        className="text-gray-300 hover:bg-transparent hover:text-main-400 transition-colors duration-300"
                       >
                         {item.title} <ChevronDown className="ml-1 h-4 w-4" />
                       </Button>
@@ -90,7 +90,7 @@ export default function Header() {
                         <DropdownMenuItem key={subItem.title} asChild>
                           <Link
                             href={subItem.href}
-                            className="flex items-center px-4 py-2 transition-colors duration-200 hover:bg-teal-400 hover:text-white rounded-md"
+                            className="flex items-center px-4 py-2 transition-colors duration-200 hover:bg-main-400 hover:text-white rounded-md"
                           >
                             <subItem.icon className="mr-2 h-4 w-4" />
                             <span>{subItem.title}</span>
@@ -103,7 +103,7 @@ export default function Header() {
                   <Link
                     key={item.title}
                     href={item.href}
-                    className="text-gray-300 hover:text-teal-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+                    className="text-gray-300 hover:text-main-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
                   >
                     {item.title}
                   </Link>
@@ -117,7 +117,7 @@ export default function Header() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-gray-300 hover:text-teal-400"
+                  className="text-gray-300 hover:text-main-400"
                 >
                   <span className="sr-only">Open main menu</span>
                   {isOpen ? (
@@ -140,7 +140,7 @@ export default function Header() {
                           value={item.title}
                           className="border-0"
                         >
-                          <AccordionTrigger className="text-left px-3 py-2 text-gray-300 hover:text-teal-400 transition-colors duration-300">
+                          <AccordionTrigger className="text-left px-3 py-2 text-gray-300 hover:text-main-400 transition-colors duration-300">
                             {item.title}
                           </AccordionTrigger>
                           <AccordionContent>
@@ -149,7 +149,7 @@ export default function Header() {
                                 <li key={subItem.title}>
                                   <Link
                                     href={subItem.href}
-                                    className="flex items-center px-4 py-2 transition-colors duration-200 hover:bg-teal-400 hover:text-white rounded-md"
+                                    className="flex items-center px-4 py-2 transition-colors duration-200 hover:bg-main-400 hover:text-white rounded-md"
                                   >
                                     <subItem.icon className="mr-2 h-4 w-4" />
                                     {subItem.title}
@@ -163,7 +163,7 @@ export default function Header() {
                         <Link
                           key={item.title}
                           href={item.href}
-                          className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-teal-400 transition-colors duration-300"
+                          className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-main-400 transition-colors duration-300"
                           onClick={() => setIsOpen(false)}
                         >
                           {item.title}

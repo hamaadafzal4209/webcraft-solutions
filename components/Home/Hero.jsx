@@ -1,40 +1,122 @@
 "use client";
-import { motion } from "framer-motion";
-import React from "react";
-import { ImagesSlider } from "../ui/images-slider";
 
-export function Hero() {
-  const images = [
-    "https://images.unsplash.com/photo-1485433592409-9018e83a1f0d?q=80&w=1814&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1483982258113-b72862e6cff6?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1482189349482-3defd547e0e9?q=80&w=2848&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  ];
-  
+import { motion } from "framer-motion";
+import GridPattern from "../ui/animated-grid-pattern";
+
+const Hero = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.5,
+      },
+    },
+  };
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: 60, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 1, ease: "easeOut" },
+    },
+  };
+
+  const subtitleVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 1.2, ease: "easeOut" },
+    },
+  };
+
+  const buttonVariants = {
+    hover: {
+      scale: 1.1,
+      boxShadow: "0 0 15px rgba(255, 255, 255, 0.6)",
+      transition: { duration: 0.3 },
+    },
+    tap: { scale: 0.95 },
+  };
+
   return (
-    <ImagesSlider className="h-[40rem]" images={images}>
-      <motion.div
-        initial={{ opacity: 0, y: -80 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="z-50 flex flex-col justify-center items-center"
+    <section className="relative h-screen flex items-center justify-center text-left bg-gradient-to-br from-blue-900 via-purple-900 to-gray-900 overflow-hidden">
+      <motion.video
+        autoPlay
+        loop
+        muted
+        className="absolute inset-0 w-full h-full object-cover opacity-40"
+        initial={{ scale: 1.1 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 15, ease: "easeOut" }}
       >
+        <source
+          src="https://cdn.pixabay.com/video/2023/10/01/183108-870151713_large.mp4"
+          type="video/mp4"
+        />
+      </motion.video>
+
+      <GridPattern
+        className="absolute inset-0"
+        width={50}
+        height={50}
+        numSquares={60}
+        maxOpacity={0.15}
+        duration={5}
+        repeatDelay={0.3}
+      />  
+
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black"></div>
+
+      <motion.div
+        className="relative z-10 px-6 md:px-16 text-gray-100 flex flex-col items-start space-y-6"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.h1
+          className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight text-main-300"
+          variants={titleVariants}
+        >
+          Unleash Your Brand’s Potential
+        </motion.h1>
+
         <motion.p
-          className="font-bold text-xl md:text-4xl max-w-4xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4"
+          className="text-lg md:text-2xl max-w-3xl text-gray-300"
+          variants={subtitleVariants}
         >
-          Transforming Your Vision into Reality
+          At WebCraft Solutions, we specialize in creating innovative digital
+          experiences that elevate brands and captivate audiences.
         </motion.p>
-        <p className="text-neutral-300 text-center max-w-xl mb-6">
-          WebCraft Solutions specializes in delivering customized digital solutions to elevate your business and drive success.
-        </p>
-        <button
-          className="px-4 py-2 backdrop-blur-sm border bg-emerald-300/10 border-emerald-500/20 text-white mx-auto text-center rounded-full relative mt-4"
-        >
-          <span>Contact Us Today →</span>
-          <div
-            className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-emerald-500 to-transparent"
-          />
-        </button>
+
+        <div className="mt-8 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+          <motion.a
+            href="#portfolio"
+            className="px-8 py-3 bg-main-300 text-white font-semibold rounded-full shadow-lg transition-all duration-300 transform"
+            variants={buttonVariants}
+            whileHover="hover"
+            whileTap="tap"
+          >
+            Discover Our Work
+          </motion.a>
+          <motion.a
+            href="#contact"
+            className="px-8 py-3 bg-gray-100 text-gray-900 font-semibold rounded-full shadow-lg transition-all duration-300 transform"
+            variants={buttonVariants}
+            whileHover="hover"
+            whileTap="tap"
+          >
+            Let’s Collaborate
+          </motion.a>
+        </div>
       </motion.div>
-    </ImagesSlider>
+    </section>
   );
-}
+};
+
+export default Hero;
