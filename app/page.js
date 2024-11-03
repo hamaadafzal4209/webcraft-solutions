@@ -1,3 +1,4 @@
+import BlogSection from '@/components/Home/Blog'
 import Hero from '@/components/Home/Hero'
 import PortfolioSection from '@/components/Home/Portfolio'
 import Services from '@/components/Home/Services'
@@ -11,6 +12,7 @@ const page = () => {
       <Services/>
       <TeamSection/>
       <PortfolioSection/>
+      <BlogSection/>
     </div>
   )
 }
