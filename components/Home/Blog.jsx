@@ -47,7 +47,7 @@ export default function BlogSection() {
                 <p className="text-gray-400">{post.excerpt}</p>
               </CardContent>
               <CardFooter className="p-6 pt-0">
-                <Button variant="outline" className="text-main-300 border-main-300 hover:bg-main-400 hover:text-white transition">
+                <Button variant="outline" className="text-main-300 border-main-300 hover:bg-main-300 hover:text-white transition">
                   Read More
                 </Button>
               </CardFooter>

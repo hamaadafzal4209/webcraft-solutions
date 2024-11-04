@@ -6,7 +6,8 @@ const nextConfig = {
       "assets.aceternity.com",
       "images.unsplash.com",
       "plus.unsplash.com",
-      "source.unsplash.com"
+      "source.unsplash.com",
+      "avatar.vercel.sh"
     ],
   },
 };

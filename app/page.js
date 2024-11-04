@@ -1,8 +1,10 @@
 import BlogSection from '@/components/Home/Blog'
+import ContactComponent from '@/components/Home/Contact'
 import Hero from '@/components/Home/Hero'
 import PortfolioSection from '@/components/Home/Portfolio'
 import Services from '@/components/Home/Services'
 import TeamSection from '@/components/Home/Team'
+import TestimonialSlider from '@/components/Home/Testimonial'
 import React from 'react'
 
 const page = () => {
@@ -12,7 +14,9 @@ const page = () => {
       <Services/>
       <TeamSection/>
       <PortfolioSection/>
+      <TestimonialSlider/>
       <BlogSection/>
+      <ContactComponent/>
     </div>
   )
 }
