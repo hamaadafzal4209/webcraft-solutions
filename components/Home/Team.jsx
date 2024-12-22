@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
@@ -12,6 +11,8 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Info } from "lucide-react";
+import SectionTitle from "../common/SectionTitle";
+import { Fade } from "react-awesome-reveal"; 
 
 const teamMembers = [
   {
@@ -63,65 +64,62 @@ export default function TeamSection() {
     <section className="w-full py-16 text-gray-100">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Meet Our Team
-          </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-gray-400">
-            The professionals dedicated to bringing your vision to life.
-          </p>
+          <Fade direction="up" triggerOnce>
+            <SectionTitle title="Meet Our Team" />
+            <p className="mx-auto max-w-[700px] text-gray-400 text-base md:text-lg">
+              The professionals dedicated to bringing your vision to life.
+            </p>
+          </Fade>
         </div>
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
-          {teamMembers.map((member, index) => (
-            <motion.div
-              key={member.name}
-              className="relative rounded-lg bg-slate-800 border-2 border-gray-700 p-6 text-center shadow-lg group perspective"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: index * 0.15,
-                duration: 0.6,
-                type: "spring",
-                stiffness: 100,
-              }}
-            >
-              <motion.div className="relative h-32 w-32 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-r from-blue-500 to-purple-500">
-                <motion.div
-                  className="h-full w-full rounded-full overflow-hidden bg-gray-700"
-                  transition={{ duration: 0.3 }}
-                >
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    width={500}
-                    height={500}
-                    className="w-full h-full transition-transform object-cover duration-500 ease-in-out transform"
-                  />
-                </motion.div>
-              </motion.div>
-
-              <h3 className="text-lg font-semibold">{member.name}</h3>
-              <p className="text-gray-400 mb-2">{member.role}</p>
-
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute top-2 right-2 z-10" // Ensure button is above other elements
-                onClick={() => handleInfoClick(member)}
-              >
-                <Info className="h-4 w-4" />
-                <span className="sr-only">More info about {member.name}</span>
-              </Button>
-
-              {/* Shadow effect on hover */}
+        <Fade cascade damping={0.2} triggerOnce>
+          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
+            {teamMembers.map((member, index) => (
               <motion.div
-                className="absolute inset-0 bg-transparent shadow-lg rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0" // Ensure shadow is below the button
-                style={{ filter: "blur(10px)" }}
-              />
-            </motion.div>
-          ))}
-        </div>
+                key={member.name}
+                className="relative rounded-lg bg-slate-800 border-2 border-gray-700 p-6 text-center shadow-lg group perspective"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: index * 0.15,
+                  duration: 0.6,
+                  type: "spring",
+                  stiffness: 100,
+                }}
+              >
+                <motion.div className="relative h-32 w-32 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-r from-blue-500 to-purple-500">
+                  <motion.div
+                    className="h-full w-full rounded-full overflow-hidden bg-gray-700"
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={500}
+                      height={500}
+                      className="w-full h-full transition-transform object-cover duration-500 ease-in-out transform"
+                    />
+                  </motion.div>
+                </motion.div>
+                <h3 className="text-lg font-semibold">{member.name}</h3>
+                <p className="text-gray-400 mb-2">{member.role}</p>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute top-2 right-2 z-10"
+                  onClick={() => handleInfoClick(member)}
+                >
+                  <Info className="h-4 w-4" />
+                  <span className="sr-only">More info about {member.name}</span>
+                </Button>
+                <motion.div
+                  className="absolute inset-0 bg-transparent shadow-lg rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"
+                  style={{ filter: "blur(10px)" }}
+                />
+              </motion.div>
+            ))}
+          </div>
+        </Fade>
       </div>
-
       <AnimatePresence>
         {selectedMember && (
           <Dialog open onOpenChange={() => setSelectedMember(null)}>

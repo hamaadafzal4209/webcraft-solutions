@@ -2,10 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .container-section {
+    @apply max-w-7xl mx-auto px-4 md:px-12 lg:px-16 py-12 md:py-20;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --woreground: 240 10% 3.9%;
+    --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
@@ -83,7 +89,7 @@
   }
 }
 
-.no-scrollbar::-webkit-scrollbar{
+.no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 

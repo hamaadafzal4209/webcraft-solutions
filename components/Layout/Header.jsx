@@ -49,8 +49,8 @@ const Header = () => {
       className={`sticky top-0 z-50 transition-all duration-300 
         ${
           isScrolled
-            ? "shadow-md py-3 px-4 lg:px-8 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900"
-            : "shadow py-3 px-4 lg:px-12 bg-gradient-to-r from-slate-800 via-slate-900 to-slate-900"
+            ? "shadow-md py-4 px-4 lg:px-8 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900"
+            : "shadow py-6 px-4 lg:px-12 bg-gradient-to-r from-slate-800 via-slate-900 to-slate-900"
         }  ${isLoaded ? "animate-navbar" : "opacity-0"}`}
     >
       <div className="flex items-center justify-between">
@@ -198,7 +198,7 @@ const Header = () => {
               </Button>
             </SheetTrigger>
             <SheetContent
-              side="right"
+              side="left"
               className="w-[300px] sm:w-[400px] min-h-screen overflow-y-auto no-scrollbar bg-slate-800 text-gray-100"
             >
               <nav className="flex flex-col mt-6 gap-2">

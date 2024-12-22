@@ -1,13 +1,19 @@
 import "./globals.css";
-import { Poppins } from "next/font/google";
+import { Poppins, Roboto } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-poppins",
+});
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
+  variable: "--font-roboto",
 });
 
 export const metadata = {
@@ -18,17 +24,18 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={cn("min-h-screen font-sans antialiased", poppins.variable)}
+      className={cn(
+        "min-h-screen font-sans antialiased",
+        poppins.variable,
+        roboto.variable
+      )}
     >
       <body
-        className={cn(
-          "font-poppins min-h-screen",
-          " bg-slate-900 text-gray-100"
-        )}
+        className={cn("min-h-screen bg-slate-900 text-gray-100", "font-poppins")}
       >
-        <Header/>
+        <Header />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
