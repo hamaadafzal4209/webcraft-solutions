@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
       <body
         className={cn(
           "font-poppins min-h-screen",
-          " bg-gray-900 text-gray-100"
+          " bg-slate-900 text-gray-100"
         )}
       >
         <Header/>

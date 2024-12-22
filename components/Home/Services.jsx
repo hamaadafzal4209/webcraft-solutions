@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { Code2, Smartphone, Megaphone, Search } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import SectionTitle from "../common/SectionTitle"
 
 export default function Services() {
   const services = [
@@ -29,12 +30,12 @@ export default function Services() {
   ]
 
   return (
-    <section className="w-full py-12 bg-gray-900">
+    <section className="w-full py-12 bg-">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl md:text-5xl">Our Services</h2>
-            <p className="mx-auto max-w-[700px] text-gray-400 md:text-xl lg:text-base xl:text-xl">
+           <SectionTitle title="Our Services"/>
+            <p className="mx-auto max-w-[700px] text-gray-400 text-base md:text-lg">
               Comprehensive solutions to help your business grow in the digital world.
             </p>
           </div>

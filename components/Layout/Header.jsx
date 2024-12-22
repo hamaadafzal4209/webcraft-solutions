@@ -1,182 +1,302 @@
 "use client";
 
-import React, { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import {
-  Menu,
-  X,
-  ChevronDown,
-  Laptop,
-  Megaphone,
-  Palette,
-  Code,
-  Globe,
-  PieChart,
-  TrendingUp,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
+import React, { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { ChevronDown, Menu } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+} from "../ui/dropdown-menu";
+import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
+import { Button } from "../ui/button";
 import {
   Accordion,
+  AccordionContent,
   AccordionItem,
   AccordionTrigger,
-  AccordionContent,
 } from "@/components/ui/accordion";
 
-const navItems = [
-  {
-    title: "Services",
-    items: [
-      {
-        title: "Web Development",
-        href: "/services/web-development",
-        icon: Laptop,
-      },
-      {
-        title: "App Development",
-        href: "/services/app-development",
-        icon: Megaphone,
-      },
-      {
-        title: "Digital Marketing",
-        href: "/services/digital-marketing",
-        icon: Palette,
-      },
-      { title: "SEO Campaigns", href: "/services/seo-campaigns", icon: Code },
-    ],
-  },
-  { title: "About", href: "/about" },
-  { title: "Portfolio", href: "/portfolio" },
-  { title: "Blog", href: "/blog" },
-  { title: "Contact", href: "/contact" },
-];
+const Header = () => {
+  const pathname = usePathname();
 
-export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const isActiveLink = (href) => pathname === href;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    setIsLoaded(true);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleLinkClick = () => {
+    setIsSidebarOpen(false);
+  };
 
   return (
-    <nav className="bg-gray-900 shadow-lg sticky top-0 left-0 right-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0">
-              <span className="text-2xl font-bold text-white">WebCraft</span>
-            </Link>
+    <nav
+      className={`sticky top-0 z-50 transition-all duration-300 
+        ${
+          isScrolled
+            ? "shadow-md py-3 px-4 lg:px-8 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900"
+            : "shadow py-3 px-4 lg:px-12 bg-gradient-to-r from-slate-800 via-slate-900 to-slate-900"
+        }  ${isLoaded ? "animate-navbar" : "opacity-0"}`}
+    >
+      <div className="flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/">
+          {/* <Image
+            src="/logo.png"
+            alt="Almaram Alfaneyah Logo"
+            width={500}
+            height={500}
+            className={`${
+              isScrolled
+                ? "w-32 sm:w-40 transition duration-300"
+                : "w-40 sm:w-48 transition duration-300"
+            }`}
+          /> */}
+          <div className="flex items-center gap-2">
+            <Image
+              src="/connection.png"
+              alt="vector"
+              width={500}
+              height={500}
+              className="w-8 h-8"
+            />
+            <h4 className="text-xl font-semibold">WebCraft</h4>
           </div>
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {navItems.map((item) =>
-                item.items ? (
-                  <DropdownMenu key={item.title}>
-                    <DropdownMenuTrigger asChild>
-                      <Button
-                        variant="ghost"
-                        className="text-gray-300 hover:bg-transparent hover:text-main-400 transition-colors duration-300"
-                      >
-                        {item.title} <ChevronDown className="ml-1 h-4 w-4" />
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent
-                      align="end"
-                      className="bg-gray-800 text-gray-300"
-                    >
-                      {item.items.map((subItem) => (
-                        <DropdownMenuItem key={subItem.title} asChild>
-                          <Link
-                            href={subItem.href}
-                            className="flex items-center px-4 py-2 transition-colors duration-200 hover:bg-main-400 hover:text-white rounded-md"
-                          >
-                            <subItem.icon className="mr-2 h-4 w-4" />
-                            <span>{subItem.title}</span>
-                          </Link>
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                ) : (
-                  <Link
-                    key={item.title}
-                    href={item.href}
-                    className="text-gray-300 hover:text-main-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
-                  >
-                    {item.title}
-                  </Link>
-                )
-              )}
-            </div>
-          </div>
-          <div className="md:hidden">
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="text-gray-300 hover:text-main-400"
+        </Link>
+
+        {/* Navigation Links */}
+        <div className="hidden lg:flex md:items-center gap-6 font-semibold text-gray-100">
+          <Link
+            href="/"
+            className={`relative group hover:text-main-400 transition-colors duration-200 ${
+              isActiveLink("/") ? "text-main-300" : ""
+            }`}
+          >
+            Home
+            <span
+              className={`absolute left-0 -bottom-1 h-1 rounded-md bg-main-300 block w-0 group-hover:w-3/4 transition-all duration-300 ${
+                isActiveLink("/") ? "w-3/4" : ""
+              }`}
+            ></span>
+          </Link>
+          <Link
+            href="/about"
+            className={`relative group hover:text-main-400 transition-colors duration-200 ${
+              isActiveLink("/about") ? "text-main-300" : ""
+            }`}
+          >
+            About Us
+            <span
+              className={`absolute left-0 -bottom-1 h-1 rounded-md bg-main-300 block w-0 group-hover:w-3/4 transition-all duration-300 ${
+                isActiveLink("/about") ? "w-3/4" : ""
+              }`}
+            ></span>
+          </Link>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center py-2 hover:text-main-400 transition-colors duration-200">
+              Services
+              <ChevronDown className="ml-1 h-4 w-4" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="mt-2 bg-slate-800 text-gray-100 rounded-lg shadow-lg border border-gray-200">
+              <DropdownMenuItem>
+                <Link
+                  href="/services/web-development"
+                  className="w-full text-sm hover:text-main-400 transition-colors duration-200"
                 >
-                  <span className="sr-only">Open main menu</span>
-                  {isOpen ? (
-                    <X className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
-                    <Menu className="block h-6 w-6" aria-hidden="true" />
-                  )}
-                </Button>
-              </SheetTrigger>
-              <SheetContent
-                side="right"
-                className="w-[300px] sm:w-[400px] bg-gray-900 text-gray-300"
-              >
-                <nav className="mt-5 px-2 space-y-1">
-                  <Accordion type="single" collapsible>
-                    {navItems.map((item) =>
-                      item.items ? (
-                        <AccordionItem
-                          key={item.title}
-                          value={item.title}
-                          className="border-0"
-                        >
-                          <AccordionTrigger className="text-left px-3 py-2 text-gray-300 hover:text-main-400 transition-colors duration-300">
-                            {item.title}
-                          </AccordionTrigger>
-                          <AccordionContent>
-                            <ul className="mt-2 space-y-1">
-                              {item.items.map((subItem) => (
-                                <li key={subItem.title}>
-                                  <Link
-                                    href={subItem.href}
-                                    className="flex items-center px-4 py-2 transition-colors duration-200 hover:bg-main-400 hover:text-white rounded-md"
-                                  >
-                                    <subItem.icon className="mr-2 h-4 w-4" />
-                                    {subItem.title}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </AccordionContent>
-                        </AccordionItem>
-                      ) : (
+                  Web Development
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link
+                  href="/services/app-development"
+                  className="w-full text-sm hover:text-main-400 transition-colors duration-200"
+                >
+                  App Development
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link
+                  href="/services/digital-marketing"
+                  className="w-full text-sm hover:text-main-400 transition-colors duration-200"
+                >
+                  Digital Marketing
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link
+                  href="/services/seo campaign"
+                  className="w-full text-sm hover:text-main-400 transition-colors duration-200"
+                >
+                  SEO Campaign
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <Link
+            href="/projects"
+            className={`relative group hover:text-main-400 transition-colors duration-200 ${
+              isActiveLink("/projects") ? "text-main-300" : ""
+            }`}
+          >
+            Projects
+            <span
+              className={`absolute left-0 -bottom-1 h-1 rounded-md bg-main-300 block w-0 group-hover:w-3/4 transition-all duration-300 ${
+                isActiveLink("/projects") ? "w-3/4" : ""
+              }`}
+            ></span>
+          </Link>
+          <Link
+            href="/projects"
+            className={`relative group hover:text-main-400 transition-colors duration-200 ${
+              isActiveLink("/projects") ? "text-main-300" : ""
+            }`}
+          >
+            Blog
+            <span
+              className={`absolute left-0 -bottom-1 h-1 rounded-md bg-main-300 block w-0 group-hover:w-3/4 transition-all duration-300 ${
+                isActiveLink("/projects") ? "w-3/4" : ""
+              }`}
+            ></span>
+          </Link>
+          <Link
+            href="/contact"
+            className={`relative group hover:text-main-400 transition-colors duration-200 ${
+              isActiveLink("/contact") ? "text-main-300" : ""
+            }`}
+          >
+            Contact Us
+            <span
+              className={`absolute left-0 -bottom-1 h-1 rounded-md bg-main-300 block w-0 group-hover:w-3/4 transition-all duration-300 ${
+                isActiveLink("/contact") ? "w-3/4" : ""
+              }`}
+            ></span>
+          </Link>
+        </div>
+
+        {/* Mobile Menu */}
+        <div className="lg:hidden flex items-center gap-2">
+          <Sheet open={isSidebarOpen} onOpenChange={setIsSidebarOpen}>
+            <SheetTrigger asChild>
+              <Button variant="outline" size="icon">
+                <Menu className="h-6 w-6 text-gray-700" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent
+              side="right"
+              className="w-[300px] sm:w-[400px] min-h-screen overflow-y-auto no-scrollbar bg-slate-800 text-gray-100"
+            >
+              <nav className="flex flex-col mt-6 gap-2">
+                <Link
+                  href="/"
+                  className={`block text-base font-semibold hover:text-main-400 transition-colors duration-200 ${
+                    isActiveLink("/") ? "text-main-300" : ""
+                  }`}
+                  onClick={handleLinkClick}
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/about"
+                  className={`block text-base font-semibold hover:text-main-400 transition-colors duration-200 ${
+                    isActiveLink("/about") ? "text-main-300" : ""
+                  }`}
+                  onClick={handleLinkClick}
+                >
+                  About Us
+                </Link>
+                <Accordion className="m-0 p-0" type="single" collapsible>
+                  <AccordionItem
+                    className="m-0 p-0 border-none"
+                    value="company"
+                  >
+                    <AccordionTrigger className="text-base font-semibold hover:text-main-400 transition-colors duration-200 m-0 p-0">
+                      Services
+                    </AccordionTrigger>
+                    <AccordionContent className="m-0 p-0">
+                      <div className="flex flex-col m-0 p-0">
                         <Link
-                          key={item.title}
-                          href={item.href}
-                          className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-main-400 transition-colors duration-300"
-                          onClick={() => setIsOpen(false)}
+                          href="/services/web-development"
+                          className="block px-3 py-1.5 hover:text-main-400 transition-colors duration-200"
+                          onClick={handleLinkClick}
                         >
-                          {item.title}
+                          Web Development
                         </Link>
-                      )
-                    )}
-                  </Accordion>
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </div>
+                        <Link
+                          href="/services/app-development"
+                          className="block px-3 py-1.5 hover:text-main-400 transition-colors duration-200"
+                          onClick={handleLinkClick}
+                        >
+                          App Development
+                        </Link>
+                        <Link
+                          href="/services/digital-marketing"
+                          className="block px-3 py-1.5 hover:text-main-400 transition-colors duration-200"
+                          onClick={handleLinkClick}
+                        >
+                          Digital Marketing
+                        </Link>
+                        <Link
+                          href="/services/seo campaign"
+                          className="block px-3 py-1.5 hover:text-main-400 transition-colors duration-200"
+                          onClick={handleLinkClick}
+                        >
+                          SEO Campaign
+                        </Link>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+
+                <Link
+                  href="/projects"
+                  className={`block text-base font-semibold hover:text-main-400 transition-colors duration-200 ${
+                    isActiveLink("/projects") ? "text-main-300" : ""
+                  }`}
+                  onClick={handleLinkClick}
+                >
+                  Projects
+                </Link>
+                <Link
+                  href="/blog"
+                  className={`block text-base font-semibold hover:text-main-400 transition-colors duration-200 ${
+                    isActiveLink("/blog") ? "text-main-300" : ""
+                  }`}
+                  onClick={handleLinkClick}
+                >
+                  Blog
+                </Link>
+                <Link
+                  href="/contact"
+                  className={`block text-base font-semibold hover:text-main-400 transition-colors duration-200 ${
+                    isActiveLink("/contact") ? "text-main-300" : ""
+                  }`}
+                  onClick={handleLinkClick}
+                >
+                  Contact Us
+                </Link>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </nav>
   );
-}
+};
+
+export default Header;

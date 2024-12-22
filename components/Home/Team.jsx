@@ -60,7 +60,7 @@ export default function TeamSection() {
   };
 
   return (
-    <section className="w-full py-16 bg-gray-900 text-gray-100">
+    <section className="w-full py-16 text-gray-100">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -92,9 +92,9 @@ export default function TeamSection() {
                   <Image
                     src={member.image}
                     alt={member.name}
-                    layout="fill"
-                    objectFit="cover"
-                    className="transition-transform duration-500 ease-in-out transform"
+                    width={500}
+                    height={500}
+                    className="w-full h-full transition-transform object-cover duration-500 ease-in-out transform"
                   />
                 </motion.div>
               </motion.div>
