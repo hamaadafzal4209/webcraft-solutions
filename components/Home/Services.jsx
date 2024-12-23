@@ -59,7 +59,7 @@ const Services = () => {
         </div>
 
         {/* Main Section */}
-        <div className="flex flex-col md:flex-row items-stretch gap-12">
+        <div className="flex flex-col md:flex-row items-stretch gap-20">
           {/* Image Section */}
           <div className="hidden md:block md:w-1/2 relative overflow-hidden">
             <Image
@@ -76,7 +76,9 @@ const Services = () => {
             {accordionData.map((item, index) => (
               <div
                 key={index}
-                className={`space-y-6 ${activeIndex === index ? 'mb-8' : 'mb-0'}`}
+                className={`space-y-6 ${
+                  activeIndex === index ? "mb-8" : "mb-0"
+                }`}
                 onClick={() => handleAccordionClick(index)}
               >
                 <div className="w-full h-[1px] mb-4 bg-white"></div>
@@ -96,7 +98,9 @@ const Services = () => {
                 </div>
                 <div
                   className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                    activeIndex === index ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                    activeIndex === index
+                      ? "max-h-[500px] opacity-100"
+                      : "max-h-0 opacity-0"
                   }`}
                 >
                   <p className="text-base text-gray-100 font-normal">
