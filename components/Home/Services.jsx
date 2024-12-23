@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import SectionBadge from "../common/SectionBadge";
 import { Plus, X } from "lucide-react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -62,13 +63,21 @@ const Services = () => {
         <div className="flex flex-col md:flex-row items-stretch gap-20">
           {/* Image Section */}
           <div className="hidden md:block md:w-1/2 relative overflow-hidden">
-            <Image
-              src={accordionData[activeIndex].image}
-              alt="Service Image"
-              width={1000}
-              height={1000}
-              className="w-full h-full object-cover rounded-md"
-            />
+            <motion.div
+              key={activeIndex}
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -100, opacity: 0 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              className="w-full h-[500px] relative rounded-md"
+            >
+              <Image
+                src={accordionData[activeIndex].image}
+                alt="Service Image"
+                layout="fill"
+                className="object-cover rounded-md"
+              />
+            </motion.div>
           </div>
 
           {/* Accordion Section */}
@@ -106,7 +115,7 @@ const Services = () => {
                   <p className="text-base text-gray-100 font-normal">
                     {item.description}
                   </p>
-                  <div className="flex flex-wrap items-center gap-4 pt-6">
+                  <div className="flex flex-wrap items-center gap-4 pt-12">
                     {item.tags.map((tag, i) => (
                       <p
                         key={i}
