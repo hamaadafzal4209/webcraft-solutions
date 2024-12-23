@@ -26,7 +26,7 @@ const WhoWeAre = () => {
 
   return (
     <div className="container-section">
-      <div className="flex items-start md:items-center md:justify-between flex-col md:flex-row gap-4 md:gap-8 mb-12">
+      <div className="flex items-start md:items-center md:justify-between flex-col md:flex-row gap-4 md:gap-8 mb-12 md:mb-16">
         <div className="flex-shrink-0">
           <SectionBadge title="Who we are" />
         </div>

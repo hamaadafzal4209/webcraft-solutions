@@ -1,127 +1,136 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { Code2, Smartphone, Megaphone, Search } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import SectionTitle from "../common/SectionTitle";
+import React, { useState } from "react";
+import SectionBadge from "../common/SectionBadge";
+import { Plus, X } from "lucide-react";
+import Image from "next/image";
 
-export default function Services() {
-  const services = [
+const Services = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const accordionData = [
+    {
+      title: "Advance Analytics",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim laudantium aliquid est.",
+      tags: ["Banner Design", "Graphic Design", "Logo Design"],
+      image: "/img1.jpg",
+    },
+    {
+      title: "Marketing Strategy",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, aliquam!",
+      tags: ["SEO", "Content Marketing", "Social Media"],
+      image: "/img2.jpg",
+    },
     {
       title: "Web Development",
       description:
-        "Custom websites and web applications built with modern technologies and best practices.",
-      icon: Code2,
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, nesciunt.",
+      tags: ["Frontend", "Backend", "Fullstack"],
+      image: "/img3.jpg",
     },
     {
-      title: "App Development",
+      title: "Brand Management",
       description:
-        "Native and cross-platform mobile applications for iOS and Android devices.",
-      icon: Smartphone,
-    },
-    {
-      title: "Digital Marketing",
-      description:
-        "Strategic digital marketing solutions to grow your online presence and reach.",
-      icon: Megaphone,
-    },
-    {
-      title: "SEO Campaigns",
-      description:
-        "Search engine optimization to improve your visibility and organic traffic.",
-      icon: Search,
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, voluptas.",
+      tags: ["Brand Identity", "Rebranding", "Strategy"],
+      image: "/img4.jpg",
     },
   ];
 
+  const handleAccordionClick = (index) => {
+    if (index !== activeIndex) setActiveIndex(index);
+  };
+
   return (
-    <section className="w-full py-12 bg-">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <SectionTitle title="Our Services" />
-            <p className="mx-auto max-w-[700px] text-gray-400 text-base md:text-lg">
-              Comprehensive solutions to help your business grow in the digital
-              world.
-            </p>
+    <div className="px-4 md:px-12 pb-20">
+      <div className="max-w-7xl mx-auto p-8 py-20 rounded-lg bg-gray-800 shadow-lg relative">
+        <div className="flex items-start md:items-center md:justify-between flex-col md:flex-row gap-4 md:gap-8 mb-12 md:mb-16">
+          <div className="flex-shrink-0">
+            <SectionBadge title="Our services" />
+          </div>
+          <div className="max-w-3xl">
+            <h1 className="inline-block z-10 bg-gradient-to-br from-main-400 via-main-300 to-main-200 bg-clip-text text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-balance leading-snug md:leading-snug lg:leading-tight xl:leading-snug font-semibold font-poppins pb-4 md:pb-6 xl:pb-10">
+              Digital services to grow your business
+            </h1>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 pt-12 md:grid-cols-2">
-          {services.map((service) => (
-            <HoverCard key={service.title} service={service} />
-          ))}
+
+        <div className="flex items-stretch gap-12">
+          {/* Image Section */}
+          <div className="w-1/2 relative overflow-hidden">
+            <div
+              className="flex w-full h-full transition-transform duration-500 ease-in-out"
+              style={{
+                transform: `translateX(-${activeIndex * 100}%)`,
+              }}
+            >
+              {accordionData.map((item, index) => (
+                <Image
+                  key={index}
+                  src={item.image}
+                  alt="Service Image"
+                  width={1000}
+                  height={1000}
+                  className="w-full h-full object-cover rounded-md flex-shrink-0"
+                  style={{
+                    transition: "none", 
+                    transform: "none",
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+          {/* Accordion Section */}
+          <div className="w-1/2">
+            {accordionData.map((item, index) => (
+              <div
+                key={index}
+                className="space-y-6 mb-8"
+                onClick={() => handleAccordionClick(index)}
+              >
+                <div className="w-full h-[1px] mb-4 bg-white"></div>
+                <div
+                  className={`flex items-center justify-between cursor-pointer ${
+                    activeIndex === index ? "text-white" : "text-gray-400"
+                  } transition-colors duration-300`}
+                >
+                  <h2
+                    className={`text-4xl font-bold ${
+                      activeIndex === index ? "text-main-300" : ""
+                    }`}
+                  >
+                    {item.title}
+                  </h2>
+                  {activeIndex === index ? <X /> : <Plus />}
+                </div>
+                <div
+                  className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                    activeIndex === index ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <p className="text-base text-gray-100 font-normal text-balance">
+                    {item.description}
+                  </p>
+                  <div className="flex items-center gap-4 pt-12">
+                    {item.tags.map((tag, i) => (
+                      <p
+                        key={i}
+                        className="px-4 py-1.5 rounded-lg hover:text-main-300 border border-gray-100 hover:border-main-300 transition-all duration-300"
+                      >
+                        {tag}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
-}
+};
 
-function HoverCard({ service }) {
-  const [isHovered, setIsHovered] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const cardRef = useRef(null);
-
-  useEffect(() => {
-    const card = cardRef.current;
-    if (!card) return;
-
-    const updateMousePosition = (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      setMousePosition({ x, y });
-    };
-
-    if (isHovered) {
-      card.addEventListener("mousemove", updateMousePosition);
-    }
-
-    return () => {
-      if (card) {
-        card.removeEventListener("mousemove", updateMousePosition);
-      }
-    };
-  }, [isHovered]);
-
-  return (
-    <Card
-      ref={cardRef}
-      className="relative transition-all rounded-lg bg-gray-800 text-gray-100 overflow-hidden 
-                 border-2 border-gray-700 hover:shadow-lg hover:border-transparent
-                 hover:border-gradient-to-r from-blue-500 to-purple-500"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      style={{
-        "--mouse-x": `${mousePosition.x}px`,
-        "--mouse-y": `${mousePosition.y}px`,
-      }}
-    >
-      <div
-        className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300"
-        style={{
-          background: `radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.06), transparent 40%)`,
-        }}
-      />
-      <CardHeader>
-        <div className="flex items-center gap-4">
-          <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-tr from-blue-500 to-purple-500">
-            <service.icon className="h-6 w-6 text-white" />
-          </div>
-          <CardTitle className="text-lg font-semibold">
-            {service.title}
-          </CardTitle>
-        </div>
-      </CardHeader>
-      <CardContent>
-        <CardDescription className="text-base text-gray-400">
-          {service.description}
-        </CardDescription>
-      </CardContent>
-    </Card>
-  );
-}
+export default Services;
