@@ -45,89 +45,97 @@ const Services = () => {
   };
 
   return (
-    <div className="px-4 md:px-8 lg:px-12 pb-20">
-      <div className="max-w-7xl mx-auto p-8 py-20 rounded-lg bg-gray-800 shadow-lg relative">
-        {/* Header Section */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-8 mb-12 md:mb-16">
-          <div>
-            <SectionBadge title="Our services" />
-          </div>
-          <div className="max-w-3xl">
-            <h1 className="bg-gradient-to-br from-main-400 via-main-300 to-main-200 bg-clip-text text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-snug font-semibold font-poppins pb-4">
-              Digital services to grow your business
-            </h1>
-          </div>
-        </div>
+    <div className="px-4 md:px-8 lg:px-12 pb-20 bg-slate-900">
+      <div className="relative max-w-7xl mx-auto">
+        {/* Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-800 via-purple-700 to-pink-600 opacity-30 rounded-xl"></div>
 
-        {/* Main Section */}
-        <div className="flex flex-col md:flex-row items-stretch gap-20">
-          {/* Image Section */}
-          <div className="hidden md:block md:w-1/2 relative overflow-hidden">
-            <motion.div
-              key={activeIndex}
-              initial={{ y: 100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -100, opacity: 0 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-              className="w-full h-[500px] relative rounded-md"
-            >
-              <Image
-                src={accordionData[activeIndex].image}
-                alt="Service Image"
-                layout="fill"
-                className="object-cover rounded-md"
-              />
-            </motion.div>
+        {/* Shadow Div */}
+        <div className="absolute inset-0 -z-20 shadow-2xl shadow-blue-900 rounded-xl"></div>
+
+        <div className="p-8 py-20  rounded-lg shadow-lg relative">
+          {/* Header Section */}
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-8 mb-12 md:mb-16">
+            <div>
+              <SectionBadge title="Our services" />
+            </div>
+            <div className="max-w-3xl">
+              <h1 className="bg-gradient-to-br from-blue-400 via-purple-300 to-pink-200 bg-clip-text text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-snug font-semibold font-poppins pb-4">
+                Digital services to grow your business
+              </h1>
+            </div>
           </div>
 
-          {/* Accordion Section */}
-          <div className="md:w-1/2">
-            {accordionData.map((item, index) => (
-              <div
-                key={index}
-                className={`space-y-6 ${
-                  activeIndex === index ? "mb-8" : "mb-0"
-                }`}
-                onClick={() => handleAccordionClick(index)}
+          {/* Main Section */}
+          <div className="flex flex-col md:flex-row items-stretch gap-20">
+            {/* Image Section */}
+            <div className="hidden md:block md:w-1/2 relative overflow-hidden">
+              <motion.div
+                key={activeIndex}
+                initial={{ y: 100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -100, opacity: 0 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className="w-full h-[500px] relative rounded-md"
               >
-                <div className="w-full h-[1px] mb-4 bg-white"></div>
+                <Image
+                  src={accordionData[activeIndex].image}
+                  alt="Service Image"
+                  layout="fill"
+                  className="object-cover rounded-md"
+                />
+              </motion.div>
+            </div>
+
+            {/* Accordion Section */}
+            <div className="md:w-1/2">
+              {accordionData.map((item, index) => (
                 <div
-                  className={`flex items-center justify-between cursor-pointer ${
-                    activeIndex === index ? "text-white" : "text-gray-400"
-                  } transition-colors duration-300`}
+                  key={index}
+                  className={`space-y-6 ${
+                    activeIndex === index ? "mb-8" : "mb-0"
+                  }`}
+                  onClick={() => handleAccordionClick(index)}
                 >
-                  <h2
-                    className={`text-2xl md:text-3xl lg:text-4xl font-bold ${
-                      activeIndex === index ? "text-main-300" : ""
+                  <div className="w-full h-[1px] mb-4 bg-white"></div>
+                  <div
+                    className={`flex items-center justify-between cursor-pointer ${
+                      activeIndex === index ? "text-white" : "text-gray-400"
+                    } transition-colors duration-300`}
+                  >
+                    <h2
+                      className={`text-2xl md:text-3xl lg:text-4xl font-bold ${
+                        activeIndex === index ? "text-main-300" : ""
+                      }`}
+                    >
+                      {item.title}
+                    </h2>
+                    {activeIndex === index ? <X /> : <Plus />}
+                  </div>
+                  <div
+                    className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                      activeIndex === index
+                        ? "max-h-[500px] opacity-100"
+                        : "max-h-0 opacity-0"
                     }`}
                   >
-                    {item.title}
-                  </h2>
-                  {activeIndex === index ? <X /> : <Plus />}
-                </div>
-                <div
-                  className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                    activeIndex === index
-                      ? "max-h-[500px] opacity-100"
-                      : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <p className="text-base text-gray-100 font-normal">
-                    {item.description}
-                  </p>
-                  <div className="flex flex-wrap items-center gap-4 pt-12">
-                    {item.tags.map((tag, i) => (
-                      <p
-                        key={i}
-                        className="px-4 py-1.5 rounded-lg hover:text-main-300 border border-gray-100 hover:border-main-300 transition-all duration-300"
-                      >
-                        {tag}
-                      </p>
-                    ))}
+                    <p className="text-base text-gray-100 font-normal">
+                      {item.description}
+                    </p>
+                    <div className="flex flex-wrap items-center gap-4 pt-12">
+                      {item.tags.map((tag, i) => (
+                        <p
+                          key={i}
+                          className="px-4 py-1.5 rounded-lg hover:text-main-300 border border-gray-100 hover:border-main-300 transition-all duration-300"
+                        >
+                          {tag}
+                        </p>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
