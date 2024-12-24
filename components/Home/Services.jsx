@@ -5,6 +5,7 @@ import SectionBadge from "../common/SectionBadge";
 import { Plus, X } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import SectionHeader from "../common/SectionHeader";
 
 const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -50,25 +51,13 @@ const Services = () => {
         {/* Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-800 via-purple-700 to-pink-600 opacity-30 rounded-xl"></div>
 
-        {/* Shadow Div */}
-        <div className="absolute inset-0 -z-20 shadow-2xl shadow-blue-900 rounded-xl"></div>
+        <div className="p-8 py-20 rounded-lg shadow-lg relative">
+          <SectionHeader
+            title="Our services"
+            text="Digital services to grow your business"
+          />
 
-        <div className="p-8 py-20  rounded-lg shadow-lg relative">
-          {/* Header Section */}
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-8 mb-12 md:mb-16">
-            <div>
-              <SectionBadge title="Our services" />
-            </div>
-            <div className="max-w-3xl">
-              <h1 className="bg-gradient-to-br from-blue-400 via-purple-300 to-pink-200 bg-clip-text text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-snug font-semibold font-poppins pb-4">
-                Digital services to grow your business
-              </h1>
-            </div>
-          </div>
-
-          {/* Main Section */}
-          <div className="flex flex-col md:flex-row items-stretch gap-20">
-            {/* Image Section */}
+          <div className="flex flex-col md:flex-row items-stretch gap-20 mt-8 md:mt-12">
             <div className="hidden md:block md:w-1/2 relative overflow-hidden">
               <motion.div
                 key={activeIndex}
@@ -87,7 +76,6 @@ const Services = () => {
               </motion.div>
             </div>
 
-            {/* Accordion Section */}
             <div className="md:w-1/2">
               {accordionData.map((item, index) => (
                 <div

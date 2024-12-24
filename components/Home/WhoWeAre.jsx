@@ -1,6 +1,7 @@
 import React from "react";
 import { FaAppStore, FaDesktop, FaBullhorn } from "react-icons/fa"; // Importing icons
 import SectionBadge from "../common/SectionBadge";
+import SectionHeader from "../common/SectionHeader";
 
 const WhoWeAre = () => {
   const services = [
@@ -26,21 +27,13 @@ const WhoWeAre = () => {
 
   return (
     <div className="container-section">
-      <div className="flex items-start md:items-center md:justify-between flex-col md:flex-row gap-4 md:gap-8 mb-12 md:mb-16">
-        <div className="flex-shrink-0">
-          <SectionBadge title="Who we are" />
-        </div>
-        <div className="max-w-3xl">
-          <h1 className="inline-block bg-gradient-to-br from-main-400 via-main-300 to-main-200 bg-clip-text text-transparent text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-balance leading-relaxed md:leading-snug lg:leading-tight xl:leading-snug font-semibold font-poppins pb-4 md:pb-6 xl:pb-10">
-            Your partners for digital success
-          </h1>
-          <p className="text-base md:text-lg text-gray-100 font-light text-balance">
-            We’re a team of expert designers, web developers, and marketers
-            who’ve been delivering digital success for more than a decade. We
-            excel at marketing websites, innovative web apps, and mobile
-            applications.
-          </p>
-        </div>
+      <SectionHeader title="Who we are" text="Your partners for digital success" />
+      <div className="max-w-3xl ml-auto pb-8 md:pb-16">
+        <p className="text-base md:text-lg text-gray-100 font-light text-balance">
+          We’re a team of expert designers, web developers, and marketers who’ve
+          been delivering digital success for more than a decade. We excel at
+          marketing websites, innovative web apps, and mobile applications.
+        </p>
       </div>
 
       {/* Grid of Services */}
