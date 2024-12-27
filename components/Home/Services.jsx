@@ -48,7 +48,6 @@ const Services = () => {
   return (
     <div className="px-4 md:px-8 lg:px-12 pb-20 bg-slate-900">
       <div className="relative max-w-7xl mx-auto">
-        {/* Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-800 via-purple-700 to-pink-600 opacity-30 rounded-xl"></div>
 
         <div className="p-8 py-20 rounded-lg shadow-lg relative">
@@ -57,7 +56,7 @@ const Services = () => {
             text="Digital services to grow your business"
           />
 
-          <div className="flex flex-col md:flex-row items-stretch gap-20 mt-8 md:mt-12">
+          <div className="flex flex-col md:flex-row items-stretch gap-6 md:gap-12 lg:gap-20 mt-8 md:mt-12">
             <div className="hidden md:block md:w-1/2 relative overflow-hidden">
               <motion.div
                 key={activeIndex}
@@ -114,7 +113,7 @@ const Services = () => {
                       {item.tags.map((tag, i) => (
                         <p
                           key={i}
-                          className="px-4 py-1.5 rounded-lg hover:text-main-300 border border-gray-100 hover:border-main-300 transition-all duration-300"
+                          className="px-4 py-1.5 rounded-lg text-sm hover:text-main-300 border border-gray-100 hover:border-main-300 transition-all duration-300"
                         >
                           {tag}
                         </p>
