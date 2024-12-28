@@ -59,7 +59,7 @@ const Projects = () => {
       <div className="relative max-w-7xl mx-auto">
         <div className="absolute inset-0 bg-gradient-to-br from-teal-800 via-blue-700 to-purple-800 opacity-50 rounded-xl"></div>
 
-        <div className="px-4 md:p-8 py-20 rounded-lg shadow-lg relative">
+        <div className="px-4 md:px-8 py-20 pt-16 rounded-lg shadow-lg relative">
           <SectionHeader
             title="Selected works"
             text="Crafting Excellence Every Single Time"
@@ -82,7 +82,9 @@ const Projects = () => {
                   <h2 className="text-lg font-semibold truncate font-poppins">
                     {project.title}
                   </h2>
-                  <p className="text-sm font-normal truncate">{project.description}</p>
+                  <p className="text-sm font-normal truncate">
+                    {project.description}
+                  </p>
                 </div>
               </div>
             ))}

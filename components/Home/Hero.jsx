@@ -8,7 +8,7 @@ import PrimaryButton from "../common/PrimaryButton";
 
 const Hero = () => {
   return (
-    <section className="relative h-[80vh] md:h-[95vh] flex items-center text-left bg-gradient-to-br from-blue-900 via-purple-900 to-gray-900 overflow-hidden">
+    <section className="relative py-28 flex items-center text-left bg-gradient-to-br from-blue-900 via-purple-900 to-gray-900 overflow-hidden">
       <motion.video
         autoPlay
         loop
