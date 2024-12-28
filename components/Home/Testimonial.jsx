@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
-import { Image } from "lucide-react";
 import { testimonials } from "@/constants/testimonialData";
 import SectionBadge from "../common/SectionBadge";
 
@@ -14,7 +13,7 @@ const Testimonial = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="px-4 md:px-8 lg:px-12 pb-6">
+    <div className="px-4 md:px-8 lg:px-12 pb-20">
       <div className="relative max-w-7xl mx-auto">
         <div className="absolute inset-0 bg-gradient-to-br from-teal-800 via-blue-700 to-purple-800 opacity-50 rounded-xl"></div>
 
