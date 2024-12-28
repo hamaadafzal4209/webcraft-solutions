@@ -50,7 +50,7 @@ const Services = () => {
       <div className="relative max-w-7xl mx-auto">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-800 via-purple-700 to-pink-600 opacity-30 rounded-xl"></div>
 
-        <div className="p-8 py-20 rounded-lg shadow-lg relative">
+        <div className="px-4 md:p-8 py-20 rounded-lg shadow-lg relative">
           <SectionHeader
             title="Our services"
             text="Digital services to grow your business"
