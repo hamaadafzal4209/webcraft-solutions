@@ -20,7 +20,7 @@ const WhoWeAre = () => {
       title: "Digital Marketing",
       description:
         "Our team uses cutting-edge marketing strategies to boost your brand’s visibility, engagement, and conversions.",
-      image: "/social-media-marketing.png", 
+      image: "/social-media-marketing.png",
     },
   ];
 
@@ -42,7 +42,7 @@ const WhoWeAre = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-gradient-to-br space-y-4 from-blue-800/30 via-purple-700/30 to-pink-600/30 rounded-xl p-6 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+            className="bg-gradient-to-br hover:bg-gradient-to-tl space-y-4 from-blue-800/30 via-purple-700/30 to-pink-600/30 rounded-xl p-6 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
           >
             <Image
               width={500}

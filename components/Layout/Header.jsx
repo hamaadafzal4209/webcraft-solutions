@@ -50,7 +50,7 @@ const Header = () => {
         ${
           isScrolled
             ? "shadow-md py-4 px-4 lg:px-8 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900"
-            : "shadow py-6 px-4 lg:px-12 bg-gradient-to-r from-slate-800 via-slate-900 to-slate-900"
+            : "shadow py-5 px-4 lg:px-12 bg-gradient-to-r from-slate-800 via-slate-900 to-slate-900"
         }  ${isLoaded ? "animate-navbar" : "opacity-0"}`}
     >
       <div className="flex items-center justify-between">

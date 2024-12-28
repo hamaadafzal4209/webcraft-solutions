@@ -88,9 +88,9 @@ const WhyChooseUs = () => {
             className="w-full h-full max-h-80 lg:max-h-full object-cover rounded-xl"
           />
           <div className="absolute top-0 right-0 scale-75">
-            <div class="circle">
-              <div class="logo"></div>
-              <div class="text">
+            <div className="circle">
+              <div className="logo"></div>
+              <div className="text">
                 <p>Some text - Animated circle text -</p>
               </div>
             </div>

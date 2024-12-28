@@ -1,10 +1,7 @@
-import BlogSection from "@/components/Home/Blog";
-import ContactComponent from "@/components/Home/Contact";
 import Hero from "@/components/Home/Hero";
-import PortfolioSection from "@/components/Home/Portfolio";
+import Projects from "@/components/Home/Projects";
 import Services from "@/components/Home/Services";
-import TeamSection from "@/components/Home/Team";
-import TestimonialSlider from "@/components/Home/Testimonial";
+import Team from "@/components/Home/Team";
 import WhoWeAre from "@/components/Home/WhoWeAre";
 import WhyChooseUs from "@/components/Home/WhyChooseUs";
 import React from "react";
@@ -15,12 +12,9 @@ const page = () => {
       <Hero />
       <WhoWeAre />
       <Services />
-      <WhyChooseUs/>
-      {/*<TeamSection/>
-      <PortfolioSection/>
-      <TestimonialSlider/>
-      <BlogSection/>
-      <ContactComponent/> */}
+      <WhyChooseUs />
+      <Projects />
+      <Team />
     </div>
   );
 };

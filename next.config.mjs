@@ -7,7 +7,8 @@ const nextConfig = {
       "images.unsplash.com",
       "plus.unsplash.com",
       "source.unsplash.com",
-      "avatar.vercel.sh"
+      "avatar.vercel.sh",
+      'img.freepik.com'
     ],
   },
 };
