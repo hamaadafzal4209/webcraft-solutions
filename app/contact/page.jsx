@@ -62,7 +62,7 @@ const ContactPage = () => {
                       id="firstName"
                       name="firstName"
                       placeholder="Enter your first name"
-                      className="w-full p-3 mt-2 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-700 bg-gray-700 text-white"
+                      className="w-full p-3 mt-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700 bg-gray-700 text-white"
                     />
                     <ErrorMessage
                       name="firstName"
@@ -82,7 +82,7 @@ const ContactPage = () => {
                       id="lastName"
                       name="lastName"
                       placeholder="Enter your last name"
-                      className="w-full p-3 mt-2 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-700 bg-gray-700 text-white"
+                      className="w-full p-3 mt-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700 bg-gray-700 text-white"
                     />
                     <ErrorMessage
                       name="lastName"
@@ -104,7 +104,7 @@ const ContactPage = () => {
                     id="email"
                     name="email"
                     placeholder="Enter your email address"
-                    className="w-full p-3 mt-2 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-700 bg-gray-700 text-white"
+                    className="w-full p-3 mt-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700 bg-gray-700 text-white"
                   />
                   <ErrorMessage
                     name="email"
@@ -126,7 +126,7 @@ const ContactPage = () => {
                     name="message"
                     rows="4"
                     placeholder="Write your message here"
-                    className="w-full p-3 mt-2 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-700 bg-gray-700 text-white"
+                    className="w-full p-3 mt-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700 bg-gray-700 text-white"
                   />
                   <ErrorMessage
                     name="message"
@@ -139,7 +139,7 @@ const ContactPage = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full p-3 bg-gradient-to-r from-blue-800 via-purple-700 to-pink-600 text-white rounded-xl hover:bg-gradient-to-l focus:outline-none focus:ring-2 focus:ring-indigo-700"
+                    className="w-full p-3 bg-gradient-to-r from-blue-800 via-purple-700 to-pink-600 text-white rounded-md hover:bg-gradient-to-l focus:outline-none focus:ring-2 focus:ring-indigo-700"
                   >
                     {isSubmitting ? "Submitting..." : "Submit"}
                   </button>
