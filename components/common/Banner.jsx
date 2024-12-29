@@ -15,7 +15,7 @@ const Banner = ({ title, subtitle, breadcrumb1, breadcrumb2, image }) => {
           <div className="w-3 h-3 fade-in-out rounded-full bg-gray-300"></div>
           <p className="text-gray-300">{breadcrumb2}</p>
         </div>
-        <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-[84px]  text-white font-sans font-semibold pb-4">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-[84px] text-white font-sans font-semibold pb-4">
           {title}
         </h1>
         <p className="max-w-3xl text-balance text-lg text-gray-300 font-normal">
