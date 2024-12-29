@@ -46,7 +46,7 @@ const Services = () => {
   };
 
   return (
-    <div className="px-4 md:px-8 lg:px-12 pb-20 bg-slate-900">
+    <div className="px-4 md:px-8 lg:px-12 pb-20">
       <div className="relative max-w-7xl mx-auto">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-800 via-purple-700 to-pink-600 opacity-30 rounded-xl"></div>
 

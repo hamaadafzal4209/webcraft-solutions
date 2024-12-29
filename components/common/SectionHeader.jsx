@@ -1,7 +1,7 @@
 import React from "react";
 import SectionBadge from "./SectionBadge";
 
-const SectionHeader = ({title, text}) => {
+const SectionHeader = ({ title, text }) => {
   return (
     <div className="flex items-start flex-col md:flex-row md:items-center justify-between w-full max-w-7xl md:gap-6">
       <div className="flex-shrink-0 pb-4 md:pb-8">
