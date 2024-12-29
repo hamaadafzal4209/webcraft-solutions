@@ -69,7 +69,7 @@ const WhyChooseUs = () => {
             </div>
             <div>
               <h2 className="text-5xl font-bold font-sans">
-                <CountUp end={843000} duration={3} separator="," />
+                <CountUp end={843} duration={3}/>
                 K+
               </h2>
               <h2 className="text-base pt-2 text-gray-100 text-balance">
