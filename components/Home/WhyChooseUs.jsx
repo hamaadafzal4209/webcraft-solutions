@@ -1,22 +1,12 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import SectionHeader from "../common/SectionHeader";
 import Image from "next/image";
 import CountUp from "react-countup";
+import Link from "next/link";
 
 const WhyChooseUs = () => {
-  useEffect(() => {
-    const text = document.querySelector(".text");
-    text.innerHTML = text.innerText
-      .split("")
-      .map(
-        (char, i) =>
-          `<span style="transform:rotate(${i * 10.3}deg)">${char}</span>`
-      )
-      .join("");
-  }, []);
-
   return (
     <div className="container-section pt-0">
       <SectionHeader
@@ -69,7 +59,7 @@ const WhyChooseUs = () => {
             </div>
             <div>
               <h2 className="text-5xl font-bold font-sans">
-                <CountUp end={843} duration={3}/>
+                <CountUp end={843} duration={3} />
                 K+
               </h2>
               <h2 className="text-base pt-2 text-gray-100 text-balance">
@@ -87,14 +77,60 @@ const WhyChooseUs = () => {
             height={500}
             className="w-full h-full max-h-80 lg:max-h-full object-cover rounded-xl"
           />
-          <div className="absolute top-0 right-0 scale-75">
-            <div className="circle">
-              <div className="logo"></div>
-              <div className="text">
-                <p>Some text - Animated circle text -</p>
+          <Link href={"/contact"}>
+          <div className="absolute top-4 right-4">
+            <button className="circle">
+              <p className="circle__text">
+                <span style={{ "--index": 0 }}>A</span>
+                <span style={{ "--index": 1 }}>W</span>
+                <span style={{ "--index": 2 }}>E</span>
+                <span style={{ "--index": 3 }}>S</span>
+                <span style={{ "--index": 4 }}>O</span>
+                <span style={{ "--index": 5 }}>M</span>
+                <span style={{ "--index": 6 }}>E</span>
+                <span style={{ "--index": 7 }}> </span>
+                <span style={{ "--index": 8 }}>C</span>
+                <span style={{ "--index": 9 }}>S</span>
+                <span style={{ "--index": 10 }}>S</span>
+                <span style={{ "--index": 11 }}> </span>
+                <span style={{ "--index": 12 }}>B</span>
+                <span style={{ "--index": 13 }}>U</span>
+                <span style={{ "--index": 14 }}>T</span>
+                <span style={{ "--index": 15 }}>T</span>
+                <span style={{ "--index": 16 }}>O</span>
+                <span style={{ "--index": 17 }}>N</span>
+              </p>
+
+              <div className="circle__circle">
+                <svg
+                  viewBox="0 0 14 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="circle__icon"
+                  width="14"
+                >
+                  <path
+                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+
+                <svg
+                  viewBox="0 0 14 15"
+                  fill="none"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="circle__icon circle__icon--copy"
+                >
+                  <path
+                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
               </div>
-            </div>
+            </button>
           </div>
+          </Link>
         </div>
       </div>
     </div>

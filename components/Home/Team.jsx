@@ -54,11 +54,45 @@ const Team = () => {
                     <p className="text-gray-300 text-sm">{member.position}</p>
                   </div>
                 </div>
-                <button
+                {/* <button
                   onClick={() => openModal(member)}
                   className="absolute top-4 right-4 flex items-center justify-center w-10 h-10 bg-white dark:bg-gray-800 text-black dark:text-white rounded-full shadow-lg cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700 transition border-none outline-none"
                 >
                   <FaArrowUpRightFromSquare className="text-xl" />
+                </button> */}
+                <button
+                  onClick={() => openModal(member)}
+                  href="#"
+                  className="absolute top-4 right-4 h-10 w-10 flex items-center justify-center arrow"
+                  style={{ "--clr": "#7808d0" }}
+                >
+                  <span className="arrow__icon-wrapper">
+                    <svg
+                      viewBox="0 0 14 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="arrow__icon-svg"
+                      width="12"
+                    >
+                      <path
+                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+
+                    <svg
+                      viewBox="0 0 14 15"
+                      fill="none"
+                      width="12"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="arrow__icon-svg arrow__icon-svg--copy"
+                    >
+                      <path
+                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </span>
                 </button>
               </div>
             </div>

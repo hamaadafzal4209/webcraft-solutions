@@ -1,6 +1,7 @@
 import React from "react";
 import SectionHeader from "../common/SectionHeader";
 import Image from "next/image";
+import PrimaryButton from "../common/PrimaryButton";
 
 const projectData = [
   {
