@@ -97,7 +97,7 @@ const FeaturesSection = () => {
         </div>
         <div className="">
           <div className="flex items-start flex-row gap-6 md:gap-8 border-b border-gray-400 pb-8">
-            <div className="bg-slate-600 flex-shrink-0 w-20 h-20 flex items-center justify-center rounded-xl">
+            <div className="bg-slate-800 flex-shrink-0 w-20 h-20 flex items-center justify-center rounded-xl">
               <FaClipboardList size={45} />
             </div>
             <div>
@@ -111,7 +111,7 @@ const FeaturesSection = () => {
             </div>
           </div>
           <div className="flex items-start flex-row gap-6 md:gap-8 border-b border-gray-400 py-8">
-            <div className="bg-slate-600 flex-shrink-0 w-20 h-20 flex items-center justify-center rounded-xl">
+            <div className="bg-slate-800 flex-shrink-0 w-20 h-20 flex items-center justify-center rounded-xl">
               <ImStatsBars size={45} />
             </div>
             <div>
@@ -125,7 +125,7 @@ const FeaturesSection = () => {
             </div>
           </div>
           <div className="flex items-start flex-row gap-6 md:gap-8 border-b border-gray-400 py-8">
-            <div className="bg-slate-600 flex-shrink-0 w-20 h-20 flex items-center justify-center rounded-xl">
+            <div className="bg-slate-800 flex-shrink-0 w-20 h-20 flex items-center justify-center rounded-xl">
               <FaAward size={45} />
             </div>
             <div>

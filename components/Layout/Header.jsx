@@ -139,7 +139,7 @@ const Header = () => {
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Link
-                  href="/services/seo campaign"
+                  href="/services/seo-campaign"
                   className="w-full text-sm hover:text-main-400 transition-colors duration-200"
                 >
                   SEO Campaign
@@ -252,7 +252,7 @@ const Header = () => {
                           Digital Marketing
                         </Link>
                         <Link
-                          href="/services/seo campaign"
+                          href="/services/seo-campaign"
                           className="block px-3 py-1.5 hover:text-main-400 transition-colors duration-200"
                           onClick={handleLinkClick}
                         >
