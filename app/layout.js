@@ -3,6 +3,7 @@ import { Poppins, Roboto } from "next/font/google";
 import { cn } from "@/lib/utils";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
+import { Toaster } from "react-hot-toast";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -31,8 +32,12 @@ export default function RootLayout({ children }) {
       )}
     >
       <body
-        className={cn("min-h-screen bg-slate-900 text-gray-100", "font-poppins")}
+        className={cn(
+          "min-h-screen bg-slate-900 text-gray-100",
+          "font-poppins"
+        )}
       >
+        <Toaster />
         <Header />
         {children}
         <Footer />
