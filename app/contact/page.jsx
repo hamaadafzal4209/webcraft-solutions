@@ -24,7 +24,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="mb-20">
+    <div>
       <Banner
         title="Contact Us"
         breadcrumb1="Home"
@@ -36,7 +36,7 @@ const ContactPage = () => {
           title={"Get in touch"}
           text={"We're ready to help you!"}
         />
-        <div className="max-w-3xl ml-auto pb-8 md:pb-16">
+        <div className="max-w-3xl ml-auto">
           <Formik
             initialValues={{
               firstName: "",
@@ -61,7 +61,8 @@ const ContactPage = () => {
                       type="text"
                       id="firstName"
                       name="firstName"
-                      className="w-full p-3 mt-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700 bg-gray-700 text-white"
+                      placeholder="Enter your first name"
+                      className="w-full p-3 mt-2 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-700 bg-gray-700 text-white"
                     />
                     <ErrorMessage
                       name="firstName"
@@ -80,7 +81,8 @@ const ContactPage = () => {
                       type="text"
                       id="lastName"
                       name="lastName"
-                      className="w-full p-3 mt-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700 bg-gray-700 text-white"
+                      placeholder="Enter your last name"
+                      className="w-full p-3 mt-2 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-700 bg-gray-700 text-white"
                     />
                     <ErrorMessage
                       name="lastName"
@@ -101,7 +103,8 @@ const ContactPage = () => {
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full p-3 mt-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700 bg-gray-700 text-white"
+                    placeholder="Enter your email address"
+                    className="w-full p-3 mt-2 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-700 bg-gray-700 text-white"
                   />
                   <ErrorMessage
                     name="email"
@@ -122,7 +125,8 @@ const ContactPage = () => {
                     id="message"
                     name="message"
                     rows="4"
-                    className="w-full p-3 mt-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-700 bg-gray-700 text-white"
+                    placeholder="Write your message here"
+                    className="w-full p-3 mt-2 border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-700 bg-gray-700 text-white"
                   />
                   <ErrorMessage
                     name="message"
@@ -135,7 +139,7 @@ const ContactPage = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full p-3 bg-gradient-to-r from-blue-800 via-purple-700 to-pink-600 text-white rounded-md hover:bg-gradient-to-l focus:outline-none focus:ring-2 focus:ring-indigo-700"
+                    className="w-full p-3 bg-gradient-to-r from-blue-800 via-purple-700 to-pink-600 text-white rounded-xl hover:bg-gradient-to-l focus:outline-none focus:ring-2 focus:ring-indigo-700"
                   >
                     {isSubmitting ? "Submitting..." : "Submit"}
                   </button>
