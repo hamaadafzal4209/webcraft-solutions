@@ -9,7 +9,7 @@ const AboutUs = () => {
   return (
     <div>
       <Banner
-        title="We are Diteck"
+        title="Webcraft Solution"
         subtitle="We’re a team of expert designers, web developers and marketers who’ve been delivering digital success for more than a decade."
         breadcrumb1="Home"
         breadcrumb2="About Us"
