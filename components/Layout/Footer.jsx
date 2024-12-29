@@ -1,11 +1,12 @@
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
   return (
     <footer className="relative text-gray-200 rounded-xl pt-10 m-4 mt-0">
-      <div className="absolute inset-0 bg-gradient-to-br from-teal-800/30 via-blue-700/30 to-purple-800/30 opacity-50 rounded-xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-teal-800/30 via-blue-700/30 to-purple-800/30 opacity-50 rounded-xl -z-10"></div>
 
-      <div className="container-section py-0">
+      <div className="container-section py-0 z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h2 className="text-xl font-semibold mb-4 text-white">
@@ -24,24 +25,36 @@ const Footer = () => {
             </h2>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-main-300 transition">
+                <Link
+                  href="#"
+                  className="hover:text-main-300 transition linkHoverEffect"
+                >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-main-300 transition">
+                <Link
+                  href="#"
+                  className="hover:text-main-300 transition linkHoverEffect"
+                >
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-main-300 transition">
+                <Link
+                  href="#"
+                  className="hover:text-main-300 transition linkHoverEffect"
+                >
                   Portfolio
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-main-300 transition">
+                <Link
+                  href="#"
+                  className="hover:text-main-300 transition linkHoverEffect"
+                >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -55,7 +68,7 @@ const Footer = () => {
                 Email:{" "}
                 <a
                   href="mailto:info@webcraft.com"
-                  className="hover:text-main-300 transition"
+                  className="hover:text-main-300 transition linkHoverEffect"
                 >
                   info@webcraft.com
                 </a>
@@ -64,7 +77,7 @@ const Footer = () => {
                 Phone:{" "}
                 <a
                   href="tel:+1234567890"
-                  className="hover:text-main-300 transition"
+                  className="hover:text-main-300 transition linkHoverEffect"
                 >
                   +1 234 567 890
                 </a>
