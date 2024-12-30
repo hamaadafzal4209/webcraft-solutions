@@ -14,7 +14,7 @@ export const BlogNotFound = () => {
           }
         </p>
         <Image
-          src="/not-found.jpg"
+          src="/not-found.png"
           alt="Blog Not Found"
           width={400}
           height={300}
