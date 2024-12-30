@@ -60,7 +60,7 @@ const Testimonial = () => {
                 key={index}
                 className={`rounded-full cursor-pointer transition-all duration-300 h-3 ${
                   activeIndex === index
-                    ? "bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 w-6"
+                    ? "bg-main-300 w-6"
                     : "bg-gray-500 w-3 hover:bg-gray-400"
                 }`}
                 onClick={() => {

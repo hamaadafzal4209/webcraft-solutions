@@ -161,15 +161,15 @@ const Header = () => {
             ></span>
           </Link>
           <Link
-            href="/projects"
+            href="/blog"
             className={`relative group hover:text-main-400 transition-colors duration-200 ${
-              isActiveLink("/projects") ? "text-main-300" : ""
+              isActiveLink("/blog") ? "text-main-300" : ""
             }`}
           >
             Blog
             <span
               className={`absolute left-0 -bottom-1 h-1 rounded-md bg-main-300 block w-0 group-hover:w-3/4 transition-all duration-300 ${
-                isActiveLink("/projects") ? "w-3/4" : ""
+                isActiveLink("/blog") ? "w-3/4" : ""
               }`}
             ></span>
           </Link>
