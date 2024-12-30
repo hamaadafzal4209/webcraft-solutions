@@ -31,13 +31,13 @@ const Blog = ({ showAll = false }) => {
                 </p>
               </div>
             </div>
-            <Link href="#">
+            <Link href={`/blogs/${blog.slug}`}>
               <h2 className="text-2xl font-semibold hover:text-main-300 pt-4 text-gray-200 truncate">
                 {blog.title}
               </h2>
             </Link>
             <p className="mt-3 text-sm text-gray-400 line-clamp-2">
-              {blog.description}
+              {blog.description1}
             </p>
           </div>
         ))}
