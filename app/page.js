@@ -1,3 +1,4 @@
+import Blog from "@/components/Home/Blog";
 import Hero from "@/components/Home/Hero";
 import Projects from "@/components/Home/Projects";
 import Services from "@/components/Home/Services";
@@ -16,6 +17,7 @@ const page = () => {
       <WhyChooseUs />
       <Projects />
       <Team />
+      <Blog />
       <Testimonial />
     </div>
   );
