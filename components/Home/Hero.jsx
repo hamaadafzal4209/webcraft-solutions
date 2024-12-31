@@ -18,10 +18,7 @@ const Hero = () => {
         animate={{ scale: 1 }}
         transition={{ duration: 15, ease: "easeOut" }}
       >
-        <source
-          src="/banner.mp4"
-          type="video/mp4"
-        />
+        <source src="/banner.mp4" type="video/mp4" />
       </motion.video>
 
       <GridPattern
@@ -42,8 +39,8 @@ const Hero = () => {
         animate="visible"
       >
         <BlurFade className="w-full">
-          <motion.h1 className="text-3xl md:text-4xl lg:text-5xl max-w-3xl font-extrabold tracking-tight leading-tight text-main-300">
-          Finest solutions for all challenges
+          <motion.h1 className="text-3xl md:text-4xl lg:text-5xl max-w-2xl text-balance font-extrabold tracking-tight leading-tight text-main-300">
+            Finest solutions for all challenges
           </motion.h1>
         </BlurFade>
 

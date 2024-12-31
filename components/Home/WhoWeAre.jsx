@@ -42,7 +42,7 @@ const WhoWeAre = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-gradient-to-br hover:bg-gradient-to-tl space-y-4 from-blue-800/30 via-purple-700/30 to-pink-600/30 rounded-xl p-6 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+            className="bg-gradient-to-br hover:bg-gradient-to-tl space-y-4 from-blue-800/50 via-purple-700/50 to-pink-600/50 rounded-xl p-6 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
           >
             <Image
               width={500}
@@ -54,7 +54,7 @@ const WhoWeAre = () => {
             <h2 className="text-xl font-semibold text-main-300">
               {service.title}
             </h2>
-            <p className="mt-4 text-gray-400 leading-relaxed">
+            <p className="mt-4 text-gray-200 leading-relaxed">
               {service.description}
             </p>
           </div>
