@@ -19,7 +19,7 @@ const Projects = () => {
             {projectData.map((project) => (
               <div
                 key={project.id}
-                className={`rounded-xl shadow-lg overflow-hidden ${project.bgColor}`}
+                className={`rounded-xl shadow-lg overflow-hidden bg-gradient-to-bl from-blue-800 via-purple-700 to-pink-600`}
               >
                 <Image
                   src={project.imageUrl}
@@ -28,7 +28,7 @@ const Projects = () => {
                   height={1000}
                   className="w-full h-72 rounded-xl object-cover"
                 />
-                <div className="p-4">
+                <div className={`p-4`}>
                   <h2 className="text-lg sm:text-xl font-semibold truncate font-poppins">
                     {project.title}
                   </h2>
