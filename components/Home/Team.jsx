@@ -44,9 +44,10 @@ const Team = () => {
                 <img
                   src={member.imageUrl}
                   alt={member.name}
-                  className="w-full h-full object-cover transition duration-300"
+                  className="w-full h-full object-cover transition duration-300 group"
                 />
-                <div className="absolute inset-0 flex items-end bg-gradient-to-t from-indigo-700/80 via-purple-600/50 to-pink-500/40 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:translate-y-0 translate-y-full">
+                <div className="absolute inset-0 bg-gradient-to-t from-indigo-700/80 via-purple-600/50 to-pink-500/40 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:translate-y-0 translate-y-full"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end group-hover:bg-transparent">
                   <div className="p-4 text-left w-full">
                     <h3 className="text-white text-lg font-semibold">
                       {member.name}
@@ -54,12 +55,6 @@ const Team = () => {
                     <p className="text-gray-300 text-sm">{member.position}</p>
                   </div>
                 </div>
-                {/* <button
-                  onClick={() => openModal(member)}
-                  className="absolute top-4 right-4 flex items-center justify-center w-10 h-10 bg-white dark:bg-gray-800 text-black dark:text-white rounded-full shadow-lg cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700 transition border-none outline-none"
-                >
-                  <FaArrowUpRightFromSquare className="text-xl" />
-                </button> */}
                 <button
                   onClick={() => openModal(member)}
                   href="#"
@@ -140,38 +135,6 @@ const Team = () => {
                   <p className="text-gray-400 text-sm whitespace-pre-line">
                     {selectedMember.description}
                   </p>
-                  <div className="flex gap-4 mt-4">
-                    {selectedMember.socialLinks.linkedin && (
-                      <a
-                        href={selectedMember.socialLinks.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-white"
-                      >
-                        <FaLinkedin size={20} />
-                      </a>
-                    )}
-                    {selectedMember.socialLinks.twitter && (
-                      <a
-                        href={selectedMember.socialLinks.twitter}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-white"
-                      >
-                        <FaTwitter size={20} />
-                      </a>
-                    )}
-                    {selectedMember.socialLinks.github && (
-                      <a
-                        href={selectedMember.socialLinks.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-white"
-                      >
-                        <FaGithub size={20} />
-                      </a>
-                    )}
-                  </div>
                 </div>
               </div>
             </motion.div>

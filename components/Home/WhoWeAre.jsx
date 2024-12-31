@@ -7,22 +7,22 @@ const WhoWeAre = () => {
     {
       title: "Customer-Centric Approach",
       description:
-        "Our priority is understanding your needs and delivering tailor-made solutions that align with your goals.",
+        "We focus on understanding your needs and providing tailored solutions to meet your business goals, ensuring maximum satisfaction and success.",
       image: "/target.png",
     },
     {
       title: "Innovative Solutions",
       description:
-        "We thrive on innovation, creating groundbreaking ideas that drive success and growth.",
+        "We emphasize creativity and innovation in every project, delivering cutting-edge solutions that help your business achieve sustainable growth and success.",
       image: "/project-management.png",
     },
     {
       title: "Global Reach",
       description:
-        "With clients across the globe, we bring an international perspective to every project.",
+        "With a diverse, global client base, we bring an international perspective to every project, ensuring a broad and effective approach to meeting your needs.",
       image: "/global.png",
     },
-  ];
+  ];  
 
   return (
     <div className="container-section">

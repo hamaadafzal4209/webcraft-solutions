@@ -12,34 +12,34 @@ const Services = () => {
 
   const accordionData = [
     {
-      title: "Advance Analytics",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim laudantium aliquid est.",
-      tags: ["Banner Design", "Graphic Design", "Logo Design"],
-      image: "/img1.jpg",
-    },
-    {
-      title: "Marketing Strategy",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, aliquam!",
-      tags: ["SEO", "Content Marketing", "Social Media"],
-      image: "/img2.jpg",
-    },
-    {
       title: "Web Development",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, nesciunt.",
+        "We create responsive, high-performance websites tailored to your business needs, ensuring a seamless user experience across all devices.",
       tags: ["Frontend", "Backend", "Fullstack"],
+      image: "/web-development.jpg",
+    },
+    {
+      title: "App Development",
+      description:
+        "Our team builds intuitive, scalable mobile applications for both iOS and Android platforms, designed to provide an exceptional user experience.",
+      tags: ["Mobile Apps", "iOS", "Android"],
+      image: "/app-development.jpg",
+    },
+    {
+      title: "Digital Marketing",
+      description:
+        "We provide comprehensive digital marketing services that increase your online presence, drive traffic, and boost conversions across various channels.",
+      tags: ["PPC", "Email Marketing", "Social Ads"],
       image: "/img3.jpg",
     },
     {
-      title: "Brand Management",
+      title: "SEO Campaign",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, voluptas.",
-      tags: ["Brand Identity", "Rebranding", "Strategy"],
+        "Our SEO campaigns are designed to improve your website's visibility, drive organic traffic, and boost rankings across major search engines.",
+      tags: ["On-page SEO", "Off-page SEO", "Keyword Research"],
       image: "/img4.jpg",
     },
-  ];
+  ];  
 
   const handleAccordionClick = (index) => {
     if (index !== activeIndex) setActiveIndex(index);
