@@ -30,7 +30,6 @@ const Services = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-blue-800 via-purple-700 to-pink-600 opacity-30 rounded-xl"></div>
 
         <div className="px-4 md:p-8 py-20 rounded-lg shadow-lg relative">
-          {/* Section Header with animation */}
           <motion.div
             variants={fadeInVariants}
             initial="hidden"
@@ -44,7 +43,6 @@ const Services = () => {
           </motion.div>
 
           <div className="flex flex-col md:flex-row items-stretch gap-6 md:gap-12 lg:gap-20 mt-8 md:mt-12">
-            {/* Left Side - Image */}
             <div className="hidden md:block md:w-1/2 relative overflow-hidden">
               <motion.div
                 key={activeIndex}
@@ -63,7 +61,6 @@ const Services = () => {
               </motion.div>
             </div>
 
-            {/* Right Side - Accordion */}
             <div className="md:w-1/2">
               {accordionData.map((item, index) => (
                 <div
@@ -74,7 +71,6 @@ const Services = () => {
                   onClick={() => handleAccordionClick(index)}
                 >
                   <div className="w-full h-[1px] mb-4 bg-white"></div>
-                  {/* Accordion Header */}
                   <div
                     className={`flex items-center justify-between cursor-pointer ${
                       activeIndex === index ? "text-white" : "text-gray-400"
@@ -90,7 +86,6 @@ const Services = () => {
                     {activeIndex === index ? <X /> : <Plus />}
                   </div>
 
-                  {/* Accordion Content */}
                   <motion.div
                     className="overflow-hidden"
                     initial={{
