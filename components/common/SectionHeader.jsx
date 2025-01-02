@@ -1,9 +1,30 @@
+"use client"
+
 import React from "react";
 import SectionBadge from "./SectionBadge";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const SectionHeader = ({ title, text }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
+  const animationVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <div className="flex items-start flex-col md:flex-row md:items-center justify-between w-full max-w-7xl md:gap-6">
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={animationVariants}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="flex items-start flex-col md:flex-row md:items-center justify-between w-full max-w-7xl md:gap-6"
+    >
       <div className="flex-shrink-0 pb-4 md:pb-8">
         <SectionBadge title={title} />
       </div>
@@ -12,7 +33,7 @@ const SectionHeader = ({ title, text }) => {
           {text}
         </h1>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
