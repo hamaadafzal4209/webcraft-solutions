@@ -12,7 +12,7 @@ const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [sectionRef, sectionInView] = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.2,
   });
 
   const fadeInVariants = {

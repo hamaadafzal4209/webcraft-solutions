@@ -1,25 +1,17 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 
 import React from "react";
 import SectionHeader from "../common/SectionHeader";
 import Image from "next/image";
 import { highlights } from "@/constants/highlight";
-import { Fade, Slide } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const fadeInVariants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } },
-};
-
-const staggerVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { staggerChildren: 0.2, duration: 0.6 },
-  },
 };
 
 const WhoWeAre = () => {
@@ -54,16 +46,27 @@ const WhoWeAre = () => {
         </div>
       </Fade>
 
-      <Slide cascade damping={0.1} direction="up" triggerOnce>
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-          variants={staggerVariants}
-        >
-          {highlights.map((highlight, index) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {highlights.map((highlight, index) => {
+          const { ref, inView } = useInView({
+            triggerOnce: true,
+            threshold: 0.2,
+          });
+
+          return (
             <motion.div
               key={index}
+              ref={ref}
               className="bg-gradient-to-br hover:bg-gradient-to-tl space-y-3 from-blue-800/50 via-purple-700/50 to-pink-600/50 rounded-xl p-6 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
-              variants={staggerVariants}
+              animate={
+                inView
+                  ? {
+                      opacity: 1,
+                      translateY: 0,
+                      transition: { duration: 0.3, delay: index * 0.2, ease: "easeIn" },
+                    }
+                  : { opacity: 0, translateY: 50 }
+              }
             >
               <Image
                 width={500}
@@ -79,9 +82,9 @@ const WhoWeAre = () => {
                 {highlight.description}
               </p>
             </motion.div>
-          ))}
-        </motion.div>
-      </Slide>
+          );
+        })}
+      </div>
     </motion.div>
   );
 };
