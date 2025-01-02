@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 
 import React, { useState } from "react";
@@ -6,7 +5,6 @@ import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 import Banner from "@/components/common/Banner";
 import { FaCheck } from "react-icons/fa6";
-import { ChevronDown, ChevronUp, X } from "lucide-react";
 import { Accordion } from "@/components/common/Accordion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -82,7 +80,6 @@ const ServiceDetailPage = () => {
                 stand out in the industry.
               </p>
 
-              {/* Features Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-8 mt-12">
                 {currentService.features.map((feature, index) => (
                   <div key={index} className="flex items-start gap-6">
@@ -102,6 +99,75 @@ const ServiceDetailPage = () => {
               </div>
             </div>
 
+            {/* Pricing Plans */}
+            <div className="py-12 border-b-[1px] border-gray-500">
+              <h1 className="text-3xl md:text-5xl lg:text-7xl bg-gradient-to-br from-blue-400 via-purple-300 to-pink-200 bg-clip-text text-transparent leading-relaxed font-medium">
+                Pricing Plans
+              </h1>
+              <p className="font-light text-balance text-base sm:text-lg text-gray-300 pt-4">
+                Choose a plan that fits your needs and budget.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                {currentService.pricingPlans.map((plan, index) => (
+                  <div
+                    key={index}
+                    className={`rounded-xl p-6 shadow-lg bg-gradient-to-br from-indigo-600/30 via-purple-500/30 to-pink-500/30 text-white`}
+                  >
+                    <div className="text-center">
+                      <h2 className="text-2xl font-semibold">{plan.plan}</h2>
+                      <p className="text-3xl font-bold text-main-300">
+                        {plan.price}
+                      </p>
+                      <p className="text-sm font-light mt-2">
+                        {plan.description}
+                      </p>
+                    </div>
+
+                    <div className="mt-6">
+                      <h3 className="text-lg font-medium">Features:</h3>
+                      <ul className="mt-4 space-y-2">
+                        {plan.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-center gap-2">
+                            <FaCheck className="text-green-400" /> {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="mt-4">
+                      <button
+                        type="button"
+                        class="text-white bg-gradient-to-br from-blue-800 via-purple-700 to-pink-600 hover:bg-gradient-to-tl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-2.5 text-center me-2 block w-full"
+                      >
+                        Contact Us
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Tools & Technologies */}
+            <div className="py-12 border-b-[1px] border-gray-500">
+              <h1 className="text-3xl md:text-5xl lg:text-7xl bg-gradient-to-br from-blue-400 via-purple-300 to-pink-200 bg-clip-text text-transparent font-medium">
+                Tools & Technologies Used
+              </h1>
+              <p className="font-light text-balance text-base sm:text-lg text-gray-300 pt-4">
+                Explore the cutting-edge tools we use to deliver exceptional
+                results.
+              </p>
+              <div className="flex flex-wrap gap-4 mt-12">
+                {currentService.toolsTechnologies.map((tool, index) => (
+                  <span
+                    key={index}
+                    className="bg-gradient-to-br from-blue-800 via-purple-700 to-pink-600 py-2 px-4 rounded-full text-gray-100 shadow-md"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+
             {/* FAQs */}
             <div className="py-12">
               <h1 className="text-3xl md:text-5xl lg:text-7xl bg-gradient-to-br from-blue-400 via-purple-300 to-pink-200 bg-clip-text text-transparent font-medium">
@@ -114,14 +180,13 @@ const ServiceDetailPage = () => {
               <div className="flex flex-col md:flex-row items-stretch gap-8 mt-12">
                 <div className="md:w-1/2">
                   <Image
-                    src={'/img7.jpg'}
-                    alt="image"
+                    src={"/img7.jpg"}
+                    alt="FAQs"
                     width={500}
                     height={500}
                     className="w-full h-full rounded-xl object-cover"
                   />
                 </div>
-
                 <div className="space-y-4 md:w-1/2">
                   {currentService.faqs.map((faq, index) => (
                     <Accordion

@@ -59,6 +59,72 @@ export const serviceData = {
           "We work with HTML, CSS, JavaScript, React, Angular, PHP, and various CMS platforms depending on project requirements.",
       },
     ],
+    pricingPlans: [
+      {
+        plan: "Basic",
+        price: "$500",
+        description:
+          "Ideal for individuals or small businesses looking to establish a simple, professional online presence.",
+        features: [
+          "Responsive Design",
+          "Basic SEO Optimization",
+          "Up to 5 Pages",
+          "Contact Form Integration",
+          "Basic Analytics Setup",
+        ],
+        deliverables: [
+          "Completion within 7 business days",
+          "One round of revisions included",
+          "Basic hosting setup guidance",
+        ],
+        support: "Email support for the first 30 days",
+        isPopular: false,
+      },
+      {
+        plan: "Standard",
+        price: "$1000",
+        description:
+          "Perfect for businesses needing a custom design and content management for regular updates.",
+        features: [
+          "All Basic Features",
+          "Custom Design Tailored to Your Brand",
+          "CMS Integration (e.g., WordPress, Webflow)",
+          "Advanced Contact Forms",
+          "Social Media Integration",
+        ],
+        deliverables: [
+          "Completion within 14 business days",
+          "Two rounds of revisions included",
+          "SEO-optimized content structure",
+        ],
+        support: "Email and chat support for the first 60 days",
+        isPopular: true,
+      },
+      {
+        plan: "Premium",
+        price: "$2000",
+        description:
+          "A comprehensive solution for businesses that require advanced functionality and SEO to drive online growth.",
+        features: [
+          "All Standard Features",
+          "Advanced SEO Optimization",
+          "E-commerce Functionality (Up to 50 Products)",
+          "Custom API Integrations",
+          "Performance and Speed Optimization",
+          "Advanced Security Features",
+        ],
+      },
+    ],
+    toolsTechnologies: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Angular",
+      "PHP",
+      "WordPress",
+      "Joomla",
+    ],
   },
   "/services/app-development": {
     title: "App Development",
@@ -118,6 +184,71 @@ export const serviceData = {
         answer:
           "Yes, we handle the entire app store submission process for both Apple App Store and Google Play.",
       },
+    ],
+    pricingPlans: [
+      {
+        plan: "Basic",
+        price: "$500",
+        description:
+          "Ideal for individuals or small businesses looking to establish a simple, professional online presence.",
+        features: [
+          "Responsive Design",
+          "Basic SEO Optimization",
+          "Up to 5 Pages",
+          "Contact Form Integration",
+          "Basic Analytics Setup",
+        ],
+        deliverables: [
+          "Completion within 7 business days",
+          "One round of revisions included",
+          "Basic hosting setup guidance",
+        ],
+        support: "Email support for the first 30 days",
+        isPopular: false,
+      },
+      {
+        plan: "Standard",
+        price: "$1000",
+        description:
+          "Perfect for businesses needing a custom design and content management for regular updates.",
+        features: [
+          "All Basic Features",
+          "Custom Design Tailored to Your Brand",
+          "CMS Integration (e.g., WordPress, Webflow)",
+          "Advanced Contact Forms",
+          "Social Media Integration",
+        ],
+        deliverables: [
+          "Completion within 14 business days",
+          "Two rounds of revisions included",
+          "SEO-optimized content structure",
+        ],
+        support: "Email and chat support for the first 60 days",
+        isPopular: true,
+      },
+      {
+        plan: "Premium",
+        price: "$2000",
+        description:
+          "A comprehensive solution for businesses that require advanced functionality and SEO to drive online growth.",
+        features: [
+          "All Standard Features",
+          "Advanced SEO Optimization",
+          "E-commerce Functionality (Up to 50 Products)",
+          "Custom API Integrations",
+          "Performance and Speed Optimization",
+          "Advanced Security Features",
+        ],
+      },
+    ],
+    toolsTechnologies: [
+      "Flutter",
+      "React Native",
+      "Swift",
+      "Kotlin",
+      "Firebase",
+      "MongoDB",
+      "Node.js",
     ],
   },
   "/services/digital-marketing": {
@@ -179,6 +310,72 @@ export const serviceData = {
           "Yes, we offer comprehensive SEO strategies as part of our digital marketing services.",
       },
     ],
+    pricingPlans: [
+      {
+        plan: "Basic",
+        price: "$500",
+        description:
+          "Ideal for individuals or small businesses looking to establish a simple, professional online presence.",
+        features: [
+          "Responsive Design",
+          "Basic SEO Optimization",
+          "Up to 5 Pages",
+          "Contact Form Integration",
+          "Basic Analytics Setup",
+        ],
+        deliverables: [
+          "Completion within 7 business days",
+          "One round of revisions included",
+          "Basic hosting setup guidance",
+        ],
+        support: "Email support for the first 30 days",
+        isPopular: false,
+      },
+      {
+        plan: "Standard",
+        price: "$1000",
+        description:
+          "Perfect for businesses needing a custom design and content management for regular updates.",
+        features: [
+          "All Basic Features",
+          "Custom Design Tailored to Your Brand",
+          "CMS Integration (e.g., WordPress, Webflow)",
+          "Advanced Contact Forms",
+          "Social Media Integration",
+        ],
+        deliverables: [
+          "Completion within 14 business days",
+          "Two rounds of revisions included",
+          "SEO-optimized content structure",
+        ],
+        support: "Email and chat support for the first 60 days",
+        isPopular: true,
+      },
+      {
+        plan: "Premium",
+        price: "$2000",
+        description:
+          "A comprehensive solution for businesses that require advanced functionality and SEO to drive online growth.",
+        features: [
+          "All Standard Features",
+          "Advanced SEO Optimization",
+          "E-commerce Functionality (Up to 50 Products)",
+          "Custom API Integrations",
+          "Performance and Speed Optimization",
+          "Advanced Security Features",
+        ],
+      },
+    ],
+    toolsTechnologies: [
+      "Google Ads",
+      "Facebook Ads Manager",
+      "HubSpot",
+      "Hootsuite",
+      "Canva",
+      "Google Analytics",
+      "Ahrefs",
+      "SEMrush",
+    ],
   },
   "/services/seo-campaign": {
     title: "SEO Campaign",
@@ -238,6 +435,72 @@ export const serviceData = {
         answer:
           "We provide SEO services across various industries, including e-commerce, technology, healthcare, and more.",
       },
+    ],
+    pricingPlans: [
+      {
+        plan: "Basic",
+        price: "$500",
+        description:
+          "Ideal for individuals or small businesses looking to establish a simple, professional online presence.",
+        features: [
+          "Responsive Design",
+          "Basic SEO Optimization",
+          "Up to 5 Pages",
+          "Contact Form Integration",
+          "Basic Analytics Setup",
+        ],
+        deliverables: [
+          "Completion within 7 business days",
+          "One round of revisions included",
+          "Basic hosting setup guidance",
+        ],
+        support: "Email support for the first 30 days",
+        isPopular: false,
+      },
+      {
+        plan: "Standard",
+        price: "$1000",
+        description:
+          "Perfect for businesses needing a custom design and content management for regular updates.",
+        features: [
+          "All Basic Features",
+          "Custom Design Tailored to Your Brand",
+          "CMS Integration (e.g., WordPress, Webflow)",
+          "Advanced Contact Forms",
+          "Social Media Integration",
+        ],
+        deliverables: [
+          "Completion within 14 business days",
+          "Two rounds of revisions included",
+          "SEO-optimized content structure",
+        ],
+        support: "Email and chat support for the first 60 days",
+        isPopular: true,
+      },
+      {
+        plan: "Premium",
+        price: "$2000",
+        description:
+          "A comprehensive solution for businesses that require advanced functionality and SEO to drive online growth.",
+        features: [
+          "All Standard Features",
+          "Advanced SEO Optimization",
+          "E-commerce Functionality (Up to 50 Products)",
+          "Custom API Integrations",
+          "Performance and Speed Optimization",
+          "Advanced Security Features",
+        ],
+      },
+    ],
+    toolsTechnologies: [
+      "SEMrush",
+      "Ahrefs",
+      "Google Search Console",
+      "Moz",
+      "Yoast SEO",
+      "Screaming Frog",
+      "Ubersuggest",
+      "Google Analytics",
     ],
   },
 };
