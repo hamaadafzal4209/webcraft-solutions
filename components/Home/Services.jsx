@@ -1,62 +1,50 @@
 "use client";
 
 import React, { useState } from "react";
-import SectionBadge from "../common/SectionBadge";
 import { Plus, X } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionHeader from "../common/SectionHeader";
+import { accordionData } from "@/constants/constants";
+import { useInView } from "react-intersection-observer";
 
 const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [sectionRef, sectionInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
-  const accordionData = [
-    {
-      title: "Web Development",
-      description:
-        "We create responsive, high-performance websites tailored to your business needs, ensuring a seamless user experience across all devices.",
-      tags: ["Frontend", "Backend", "Fullstack"],
-      image: "/web-development.jpg",
-    },
-    {
-      title: "App Development",
-      description:
-        "Our team builds intuitive, scalable mobile applications for both iOS and Android platforms, designed to provide an exceptional user experience.",
-      tags: ["Mobile Apps", "iOS", "Android"],
-      image: "/app-development.jpg",
-    },
-    {
-      title: "Digital Marketing",
-      description:
-        "We provide comprehensive digital marketing services that increase your online presence, drive traffic, and boost conversions across various channels.",
-      tags: ["PPC", "Email Marketing", "Social Ads"],
-      image: "/img3.jpg",
-    },
-    {
-      title: "SEO Campaign",
-      description:
-        "Our SEO campaigns are designed to improve your website's visibility, drive organic traffic, and boost rankings across major search engines.",
-      tags: ["On-page SEO", "Off-page SEO", "Keyword Research"],
-      image: "/img4.jpg",
-    },
-  ];  
+  const fadeInVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
 
   const handleAccordionClick = (index) => {
     if (index !== activeIndex) setActiveIndex(index);
   };
 
   return (
-    <div className="px-4 md:px-8 lg:px-12 pb-20">
+    <div className="px-4 md:px-8 lg:px-12 pb-20" ref={sectionRef}>
       <div className="relative max-w-7xl mx-auto">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-800 via-purple-700 to-pink-600 opacity-30 rounded-xl"></div>
 
         <div className="px-4 md:p-8 py-20 rounded-lg shadow-lg relative">
-          <SectionHeader
-            title="Our services"
-            text="Digital services to grow your business"
-          />
+          {/* Section Header with animation */}
+          <motion.div
+            variants={fadeInVariants}
+            initial="hidden"
+            animate={sectionInView ? "visible" : "hidden"}
+            transition={{ duration: 0.6 }}
+          >
+            <SectionHeader
+              title="Our services"
+              text="Digital services to grow your business"
+            />
+          </motion.div>
 
           <div className="flex flex-col md:flex-row items-stretch gap-6 md:gap-12 lg:gap-20 mt-8 md:mt-12">
+            {/* Left Side - Image */}
             <div className="hidden md:block md:w-1/2 relative overflow-hidden">
               <motion.div
                 key={activeIndex}
@@ -75,6 +63,7 @@ const Services = () => {
               </motion.div>
             </div>
 
+            {/* Right Side - Accordion */}
             <div className="md:w-1/2">
               {accordionData.map((item, index) => (
                 <div
@@ -85,6 +74,7 @@ const Services = () => {
                   onClick={() => handleAccordionClick(index)}
                 >
                   <div className="w-full h-[1px] mb-4 bg-white"></div>
+                  {/* Accordion Header */}
                   <div
                     className={`flex items-center justify-between cursor-pointer ${
                       activeIndex === index ? "text-white" : "text-gray-400"
@@ -99,12 +89,19 @@ const Services = () => {
                     </h2>
                     {activeIndex === index ? <X /> : <Plus />}
                   </div>
-                  <div
-                    className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                      activeIndex === index
-                        ? "max-h-[500px] opacity-100"
-                        : "max-h-0 opacity-0"
-                    }`}
+
+                  {/* Accordion Content */}
+                  <motion.div
+                    className="overflow-hidden"
+                    initial={{
+                      height: activeIndex === index ? 0 : "auto",
+                      opacity: activeIndex === index ? 0 : 1,
+                    }}
+                    animate={{
+                      height: activeIndex === index ? "auto" : 0,
+                      opacity: activeIndex === index ? 1 : 0,
+                    }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
                   >
                     <p className="text-base text-gray-100 font-normal">
                       {item.description}
@@ -119,7 +116,7 @@ const Services = () => {
                         </p>
                       ))}
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
               ))}
             </div>
