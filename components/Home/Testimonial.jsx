@@ -25,7 +25,7 @@ const Testimonial = () => {
             modules={[Autoplay]}
             spaceBetween={30}
             slidesPerView={1}
-            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
             loop={true}
             onSwiper={(swiper) => {
               swiperRef.current = swiper;

@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
           "font-poppins"
         )}
       >
-        <NextTopLoader color="#F69E2C" height={3} showSpinner={false} />
+        <NextTopLoader color="#F69E2C" height={4} showSpinner={false} />
         <Toaster />
         <Header />
         {children}

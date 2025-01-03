@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FaClipboardList } from "react-icons/fa";
 import { ImStatsBars } from "react-icons/im";
 import { FaAward } from "react-icons/fa6";
+import { Fade, Zoom } from "react-awesome-reveal";
 
 const FeaturesSection = () => {
   return (
@@ -13,18 +14,23 @@ const FeaturesSection = () => {
         text={"We are leader in digital solutions"}
       />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mt-4 sm:mt-8">
-        <Image
-          src={"/img2.jpg"}
-          alt="image"
-          width={500}
-          height={500}
-          className="w-full h-full max-h-96 rounded-md object-cover"
-        />
-        <h2 className="text-lg font-extralight">
-          We’re a team of expert designers, web developers and marketers who’ve
-          been delivering digital success for more than a decade. We excel at
-          marketing websites, innovative web apps and mobile applications.
-        </h2>
+        <Zoom triggerOnce>
+          <Image
+            src={"/img2.jpg"}
+            alt="image"
+            width={500}
+            height={500}
+            className="w-full h-full max-h-96 rounded-md object-cover"
+          />
+        </Zoom>
+        <Fade direction="up" triggerOnce>
+          <h2 className="text-lg font-extralight">
+            We’re a team of expert designers, web developers and marketers
+            who’ve been delivering digital success for more than a decade. We
+            excel at marketing websites, innovative web apps and mobile
+            applications.
+          </h2>
+        </Fade>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mt-8">
         <div className="grid-cols-2 gap-8 hidden md:grid relative">
@@ -96,48 +102,54 @@ const FeaturesSection = () => {
           />
         </div>
         <div className="">
-          <div className="flex items-start flex-row gap-6 md:gap-8 border-b border-gray-400 pb-8">
-            <div className="bg-slate-800 flex-shrink-0 w-20 h-20 flex items-center justify-center rounded-xl">
-              <FaClipboardList size={45} />
+          <Fade direction="up" triggerOnce>
+            <div className="flex items-start flex-row gap-6 md:gap-8 border-b border-gray-400 pb-8">
+              <div className="bg-slate-800 flex-shrink-0 w-20 h-20 flex items-center justify-center rounded-xl">
+                <FaClipboardList size={45} />
+              </div>
+              <div>
+                <h2 className="text-2xl font-semibold bg-gradient-to-br from-blue-400 via-purple-300 to-pink-200 bg-clip-text text-transparent">
+                  Focus on driving results
+                </h2>
+                <p className="font-extralight leading-relaxed pt-2 text-gray-300">
+                  Our quick time and proactive approach assist our clients to
+                  rehearse the future and outperform the competition.
+                </p>
+              </div>
             </div>
-            <div>
-              <h2 className="text-2xl font-semibold bg-gradient-to-br from-blue-400 via-purple-300 to-pink-200 bg-clip-text text-transparent">
-                Focus on driving results
-              </h2>
-              <p className="font-extralight leading-relaxed pt-2 text-gray-300">
-                Our quick time and proactive approach assist our clients to
-                rehearse the future and outperform the competition.
-              </p>
+          </Fade>
+          <Fade direction="up" triggerOnce>
+            <div className="flex items-start flex-row gap-6 md:gap-8 border-b border-gray-400 py-8">
+              <div className="bg-slate-800 flex-shrink-0 w-20 h-20 flex items-center justify-center rounded-xl">
+                <ImStatsBars size={45} />
+              </div>
+              <div>
+                <h2 className="text-2xl font-semibold bg-gradient-to-br from-blue-400 via-purple-300 to-pink-200 bg-clip-text text-transparent">
+                  Help your business grow
+                </h2>
+                <p className="font-extralight leading-relaxed pt-2 text-gray-300">
+                  Our dynamic resourcing calibration can replicate any solution
+                  for a much larger playing ground..
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="flex items-start flex-row gap-6 md:gap-8 border-b border-gray-400 py-8">
-            <div className="bg-slate-800 flex-shrink-0 w-20 h-20 flex items-center justify-center rounded-xl">
-              <ImStatsBars size={45} />
+          </Fade>
+          <Fade direction="up" triggerOnce>
+            <div className="flex items-start flex-row gap-6 md:gap-8 border-b border-gray-400 py-8">
+              <div className="bg-slate-800 flex-shrink-0 w-20 h-20 flex items-center justify-center rounded-xl">
+                <FaAward size={45} />
+              </div>
+              <div>
+                <h2 className="text-2xl font-semibold bg-gradient-to-br from-blue-400 via-purple-300 to-pink-200 bg-clip-text text-transparent">
+                  Best quality customer service{" "}
+                </h2>
+                <p className="font-extralight leading-relaxed pt-2 text-gray-300">
+                  Cognitive capabilities and data analytics bring efficiency and
+                  competitive edge.
+                </p>
+              </div>
             </div>
-            <div>
-              <h2 className="text-2xl font-semibold bg-gradient-to-br from-blue-400 via-purple-300 to-pink-200 bg-clip-text text-transparent">
-                Help your business grow
-              </h2>
-              <p className="font-extralight leading-relaxed pt-2 text-gray-300">
-                Our dynamic resourcing calibration can replicate any solution
-                for a much larger playing ground..
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start flex-row gap-6 md:gap-8 border-b border-gray-400 py-8">
-            <div className="bg-slate-800 flex-shrink-0 w-20 h-20 flex items-center justify-center rounded-xl">
-              <FaAward size={45} />
-            </div>
-            <div>
-              <h2 className="text-2xl font-semibold bg-gradient-to-br from-blue-400 via-purple-300 to-pink-200 bg-clip-text text-transparent">
-                Best quality customer service{" "}
-              </h2>
-              <p className="font-extralight leading-relaxed pt-2 text-gray-300">
-                Cognitive capabilities and data analytics bring efficiency and
-                competitive edge.
-              </p>
-            </div>
-          </div>
+          </Fade>
         </div>
       </div>
     </div>
