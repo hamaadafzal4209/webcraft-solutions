@@ -26,8 +26,16 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const isActiveLink = (href) => pathname === href;
+
+  const serviceMenuItems = [
+    { href: "/services/web-development", label: "Web Development" },
+    { href: "/services/app-development", label: "App Development" },
+    { href: "/services/digital-marketing", label: "Digital Marketing" },
+    { href: "/services/seo-campaign", label: "SEO Campaign" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -107,44 +115,23 @@ const Header = () => {
               }`}
             ></span>
           </Link>
-          <DropdownMenu>
+          <DropdownMenu open={open} onOpenChange={setOpen}>
             <DropdownMenuTrigger className="flex items-center py-2 hover:text-main-400 transition-colors duration-200">
               Services
               <ChevronDown className="ml-1 h-4 w-4" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="mt-2 bg-slate-800 text-gray-100 rounded-lg shadow-lg border border-gray-200">
-              <DropdownMenuItem>
-                <Link
-                  href="/services/web-development"
-                  className="w-full text-sm hover:text-main-400 transition-colors duration-200"
-                >
-                  Web Development
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link
-                  href="/services/app-development"
-                  className="w-full text-sm hover:text-main-400 transition-colors duration-200"
-                >
-                  App Development
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link
-                  href="/services/digital-marketing"
-                  className="w-full text-sm hover:text-main-400 transition-colors duration-200"
-                >
-                  Digital Marketing
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link
-                  href="/services/seo-campaign"
-                  className="w-full text-sm hover:text-main-400 transition-colors duration-200"
-                >
-                  SEO Campaign
-                </Link>
-              </DropdownMenuItem>
+            <DropdownMenuContent className="mt-2 bg-slate-800 text-gray-200 rounded-lg shadow-lg border border-gray-700">
+              {serviceMenuItems.map((item, index) => (
+                <DropdownMenuItem key={index} className="p-0">
+                  <Link
+                    onClick={() => setOpen(false)}
+                    href={item.href}
+                    className="block w-full text-white px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 hover:bg-opacity-90 hover:scale-105 hover:bg-gradient-to-br from-blue-800 via-purple-700 to-pink-600"
+                  >
+                    {item.label}
+                  </Link>
+                </DropdownMenuItem>
+              ))}
             </DropdownMenuContent>
           </DropdownMenu>
           <Link

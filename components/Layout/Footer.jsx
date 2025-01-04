@@ -87,7 +87,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-indigo-700 py-4 text-center">
+        <div className="bg-gradient-to-br from-blue-800 via-purple-700 to-pink-600 h-0.5 w-full mt-8"></div>
+
+        <div className="py-4 text-center">
           <p className="text-sm">
             &copy; {new Date().getFullYear()} Webcraft. All Rights Reserved.
           </p>

@@ -5,6 +5,7 @@ import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import { Toaster } from "react-hot-toast";
 import NextTopLoader from "nextjs-toploader";
+import BackToTop from "@/components/common/BackToTop";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
       >
         <NextTopLoader color="#F69E2C" height={4} showSpinner={false} />
         <Toaster />
+        <BackToTop />
         <Header />
         {children}
         <Footer />
