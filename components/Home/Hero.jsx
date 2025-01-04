@@ -39,8 +39,8 @@ const Hero = () => {
         animate="visible"
       >
         <BlurFade className="w-full">
-          <motion.h1 className="text-3xl md:text-4xl lg:text-5xl max-w-2xl text-balance font-extrabold tracking-tight leading-tight text-main-300">
-            Finest solutions for all challenges
+          <motion.h1 className="text-3xl md:text-4xl lg:text-5xl max-w-2xl leading-loose text-balance font-extrabold tracking-tight text-main-300">
+          Transforming Ideas into Seamless Digital Experiences
           </motion.h1>
         </BlurFade>
 

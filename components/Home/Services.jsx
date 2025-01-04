@@ -29,7 +29,7 @@ const Services = () => {
       <div className="relative max-w-7xl mx-auto">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-800 via-purple-700 to-pink-600 opacity-30 rounded-xl"></div>
 
-        <div className="px-4 md:p-8 py-20 rounded-lg shadow-lg relative">
+        <div className="px-4 md:px-8 py-12 rounded-lg shadow-lg relative">
           <motion.div
             variants={fadeInVariants}
             initial="hidden"
@@ -55,8 +55,9 @@ const Services = () => {
                 <Image
                   src={accordionData[activeIndex].image}
                   alt="Service Image"
-                  layout="fill"
-                  className="object-cover rounded-md"
+                  width={1000}
+                  height={1000}
+                  className="object-cover rounded-md w-full h-full"
                 />
               </motion.div>
             </div>
