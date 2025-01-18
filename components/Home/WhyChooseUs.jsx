@@ -7,7 +7,7 @@ import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
 
 const WhyChooseUs = () => {
-  return (
+  return (     
     <div className="container-section pt-0">
       <Fade direction="up" triggerOnce>
         <SectionHeader
