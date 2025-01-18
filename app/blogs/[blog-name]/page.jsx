@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 
 import { blogsData } from "@/constants/blogData";
 import SectionBadge from "@/components/common/SectionBadge";
@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { BlogNotFound } from "@/components/common/BlogNotFound";
 
 const calculateReadingTime = (text) => {
-  const wordsPerMinute = 200; 
+  const wordsPerMinute = 200;
   const words = text.split(" ").length;
   const minutes = Math.ceil(words / wordsPerMinute);
   return `${minutes} min read`;
@@ -20,9 +20,12 @@ const BlogDetail = () => {
 
   const blog = blogsData.find((item) => item.slug === slug);
 
-  if (!blog) return <div>
-    <BlogNotFound/>
-  </div>;
+  if (!blog)
+    return (
+      <div>
+        <BlogNotFound />
+      </div>
+    );
 
   const blogContent = `${blog.description1} ${blog.description2} ${blog.description3}`;
   const readingTime = calculateReadingTime(blogContent);
@@ -35,7 +38,9 @@ const BlogDetail = () => {
           {blog.date}
         </p>
       </div>
-      <p className="text-sm text-gray-300 font-light text-center">{readingTime}</p>
+      <p className="text-sm text-gray-300 font-light text-center">
+        {readingTime}
+      </p>
 
       <h1 className="text-2xl md:text-4xl leading-relaxed lg:text-5xl xl:text-6xl text-center max-w-6xl w-full py-6 font-bold">
         {blog.title}
@@ -55,20 +60,20 @@ const BlogDetail = () => {
         <p>{blog.description3}</p>
       </div>
 
-      <div className="flex gap-4 my-10 max-w-4xl mx-auto">
+      <div className="grid grid-cols-2 gap-4 my-10 max-w-4xl mx-auto">
         <Image
           src={blog.img1}
           alt={`${blog.title} Image 1`}
-          width={500}
-          height={300}
-          className="w-1/2 rounded-lg object-cover"
+          width={1000}
+          height={1000}
+          className="w-full h-72 sm:h-full rounded-lg object-cover"
         />
         <Image
           src={blog.img2}
           alt={`${blog.title} Image 2`}
-          width={500}
-          height={300}
-          className="w-1/2 rounded-lg object-cover"
+          width={1000}
+          height={1000}
+          className="w-full h-72 -translate-y-4 sm:translate-y-0 sm:h-full rounded-lg object-cover"
         />
       </div>
 

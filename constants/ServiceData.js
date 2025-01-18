@@ -1,8 +1,8 @@
 export const serviceData = {
   "/services/web-development": {
     title: "Web Development",
-    bannerImage: "/img5.jpg",
-    subBannerImage: "/img6.jpg",
+    bannerImage: "/web-development.jpg",
+    subBannerImage: "/web-subbanner.jpg",
     description:
       "Our web development services focus on creating visually appealing, user-friendly websites that deliver seamless experiences across all devices. By utilizing the latest technologies and industry best practices, we ensure your website is responsive, fast, secure, and optimized for search engines, helping your business stand out online and deliver an exceptional user experience.",
     features: [
@@ -128,8 +128,8 @@ export const serviceData = {
   },
   "/services/app-development": {
     title: "App Development",
-    bannerImage: "/img6.jpg",
-    subBannerImage: "/img6.jpg",
+    bannerImage: "/app-development.jpg",
+    subBannerImage: "/app-subBanner.jpg",
     description:
       "We specialize in developing custom mobile applications for iOS and Android, ensuring a user-friendly experience with scalable, secure, and high-performance features. Whether you're looking for a native or cross-platform solution, our team designs and develops apps that are tailored to your business needs, helping you engage with customers and grow your brand on mobile.",
     features: [
@@ -253,8 +253,8 @@ export const serviceData = {
   },
   "/services/digital-marketing": {
     title: "Digital Marketing",
-    bannerImage: "/img1.jpg",
-    subBannerImage: "/img3.jpg",
+    bannerImage: "/digital-marketing.jpg",
+    subBannerImage: "/digital-subBanner.jpg",
     description:
       "Our digital marketing services provide tailored strategies to boost your online presence through social media management, paid advertising, content marketing, and more. We focus on driving targeted traffic, building brand awareness, and increasing conversions by optimizing campaigns based on detailed analytics and insights to ensure maximum return on investment.",
     features: [
@@ -379,8 +379,8 @@ export const serviceData = {
   },
   "/services/seo-campaign": {
     title: "SEO Campaign",
-    bannerImage: "/img2.jpg",
-    subBannerImage: "/img6.jpg",
+    bannerImage: "/SEO-campaign.jpg",
+    subBannerImage: "/seo=subBanner.jpg",
     description:
       "Our SEO services enhance your website’s visibility on search engines through targeted keyword optimization, content enhancements, and link-building strategies. We focus on improving both on-page and off-page elements, including local SEO, to increase organic traffic and drive qualified leads, helping your business grow sustainably in competitive online markets.",
     features: [
