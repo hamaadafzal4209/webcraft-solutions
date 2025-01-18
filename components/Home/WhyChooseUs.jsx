@@ -1,37 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import SectionHeader from "../common/SectionHeader";
 import Image from "next/image";
-import CountUp from "react-countup";
 import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
-import { useInView } from "react-intersection-observer";
 
 const WhyChooseUs = () => {
-  const [hasStarted1, setHasStarted1] = useState(false);
-  const [hasStarted2, setHasStarted2] = useState(false);
-  const [hasStarted3, setHasStarted3] = useState(false);
-
-  const { ref: ref1, inView: inView1 } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-  const { ref: ref2, inView: inView2 } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-  const { ref: ref3, inView: inView3 } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  useEffect(() => {
-    if (inView1 && !hasStarted1) setHasStarted1(true);
-    if (inView2 && !hasStarted2) setHasStarted2(true);
-    if (inView3 && !hasStarted3) setHasStarted3(true);
-  }, [inView1, inView2, inView3, hasStarted1, hasStarted2, hasStarted3]);
-
   return (
     <div className="container-section pt-0">
       <Fade direction="up" triggerOnce>
@@ -56,39 +31,28 @@ const WhyChooseUs = () => {
           </Fade>
 
           <Fade direction="up" triggerOnce delay={200}>
-            <div
-              ref={ref1}
-              className="bg-slate-700 p-6 rounded-xl flex flex-col justify-between h-full min-h-80"
-            >
+            <div className="bg-slate-700 p-6 rounded-xl flex flex-col justify-between h-full min-h-80">
               <div className="flex items-center gap-4">
                 <div className="w-2 h-2 rounded-full bg-main-300"></div>
                 <p>projects completed</p>
               </div>
               <div>
-                <h2 className="text-5xl font-bold font-sans">
-                  {hasStarted1 ? <CountUp end={475} duration={2} /> : "0"}+
-                </h2>
+                <h2 className="text-5xl font-bold font-sans">475 +</h2>
                 <h2 className="text-base pt-2 text-gray-100 text-balance">
-                  Over 400 successful projects delivered to our clients
-                  worldwide.
+                  Over 400 successful projects delivered to our clients worldwide.
                 </h2>
               </div>
             </div>
           </Fade>
 
           <Fade direction="up" triggerOnce delay={300}>
-            <div
-              ref={ref2}
-              className="bg-slate-700 p-6 rounded-xl flex flex-col justify-between h-full min-h-80"
-            >
+            <div className="bg-slate-700 p-6 rounded-xl flex flex-col justify-between h-full min-h-80">
               <div className="flex items-center gap-4">
                 <div className="w-2 h-2 rounded-full bg-main-300"></div>
                 <p>satisfied customers</p>
               </div>
               <div>
-                <h2 className="text-5xl font-bold font-sans">
-                  {hasStarted2 ? <CountUp end={98} duration={2} /> : "0"}%
-                </h2>
+                <h2 className="text-5xl font-bold font-sans">98%</h2>
                 <h2 className="text-base pt-2 text-gray-100 text-balance">
                   A 98% satisfaction rate across all our consulting services.
                 </h2>
@@ -97,22 +61,15 @@ const WhyChooseUs = () => {
           </Fade>
 
           <Fade direction="up" triggerOnce delay={400}>
-            <div
-              ref={ref3}
-              className="bg-slate-700 p-6 rounded-xl flex flex-col justify-between h-full min-h-80"
-            >
+            <div className="bg-slate-700 p-6 rounded-xl flex flex-col justify-between h-full min-h-80">
               <div className="flex items-center gap-4">
                 <div className="w-2 h-2 rounded-full bg-main-300"></div>
                 <p>hours saved</p>
               </div>
               <div>
-                <h2 className="text-5xl font-bold font-sans">
-                  {hasStarted3 ? <CountUp end={843} duration={3} /> : "0"}
-                  +
-                </h2>
+                <h2 className="text-5xl font-bold font-sans">843 +</h2>
                 <h2 className="text-base pt-2 text-gray-100 text-balance">
-                  Our strategies have saved clients over 800,000 hours
-                  collectively.
+                  Our strategies have saved clients over 800,000 hours collectively.
                 </h2>
               </div>
             </div>
