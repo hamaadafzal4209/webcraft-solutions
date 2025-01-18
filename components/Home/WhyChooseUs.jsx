@@ -7,7 +7,7 @@ import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
 
 const WhyChooseUs = () => {
-  return (     
+  return (
     <div className="container-section pt-0">
       <Fade direction="up" triggerOnce>
         <SectionHeader
@@ -39,7 +39,8 @@ const WhyChooseUs = () => {
               <div>
                 <h2 className="text-5xl font-bold font-sans">475 +</h2>
                 <h2 className="text-base pt-2 text-gray-100 text-balance">
-                  Over 400 successful projects delivered to our clients worldwide.
+                  Over 400 successful projects delivered to our clients
+                  worldwide.
                 </h2>
               </div>
             </div>
@@ -69,7 +70,8 @@ const WhyChooseUs = () => {
               <div>
                 <h2 className="text-5xl font-bold font-sans">843 +</h2>
                 <h2 className="text-base pt-2 text-gray-100 text-balance">
-                  Our strategies have saved clients over 800,000 hours collectively.
+                  Our strategies have saved clients over 800,000 hours
+                  collectively.
                 </h2>
               </div>
             </div>
@@ -89,24 +91,24 @@ const WhyChooseUs = () => {
               <div className="absolute top-4 right-4">
                 <button className="circle">
                   <p className="circle__text">
-                    <span style={{ "--index": 0 }}>A</span>
-                    <span style={{ "--index": 1 }}>W</span>
-                    <span style={{ "--index": 2 }}>E</span>
-                    <span style={{ "--index": 3 }}>S</span>
-                    <span style={{ "--index": 4 }}>O</span>
-                    <span style={{ "--index": 5 }}>M</span>
-                    <span style={{ "--index": 6 }}>E</span>
-                    <span style={{ "--index": 7 }}> </span>
-                    <span style={{ "--index": 8 }}>C</span>
-                    <span style={{ "--index": 9 }}>S</span>
-                    <span style={{ "--index": 10 }}>S</span>
-                    <span style={{ "--index": 11 }}> </span>
-                    <span style={{ "--index": 12 }}>B</span>
-                    <span style={{ "--index": 13 }}>U</span>
-                    <span style={{ "--index": 14 }}>T</span>
-                    <span style={{ "--index": 15 }}>T</span>
-                    <span style={{ "--index": 16 }}>O</span>
-                    <span style={{ "--index": 17 }}>N</span>
+                    <span style={{ "--index": 0 }}>I</span>
+                    <span style={{ "--index": 1 }}>N</span>
+                    <span style={{ "--index": 2 }}>N</span>
+                    <span style={{ "--index": 3 }}>O</span>
+                    <span style={{ "--index": 4 }}>V</span>
+                    <span style={{ "--index": 5 }}>A</span>
+                    <span style={{ "--index": 6 }}>T</span>
+                    <span style={{ "--index": 7 }}>E</span>
+                    <span style={{ "--index": 8 }}> </span>
+                    <span style={{ "--index": 9 }}>W</span>
+                    <span style={{ "--index": 10 }}>I</span>
+                    <span style={{ "--index": 11 }}>T</span>
+                    <span style={{ "--index": 12 }}>H</span>
+                    <span style={{ "--index": 13 }}> </span>
+                    <span style={{ "--index": 14 }}>C</span>
+                    <span style={{ "--index": 15 }}>O</span>
+                    <span style={{ "--index": 16 }}>D</span>
+                    <span style={{ "--index": 17 }}>E</span>
                   </p>
 
                   <div className="circle__circle">
