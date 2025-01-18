@@ -191,7 +191,7 @@ const ServiceDetailPage = () => {
                   <Fade
                     key={index}
                     direction="up"
-                    delay={index * 300}
+                    delay={index * 100}
                     triggerOnce
                   >
                     <div className="bg-gradient-to-br from-blue-800 via-purple-700 to-pink-600 py-2 px-4 rounded-full text-gray-100 shadow-md">
