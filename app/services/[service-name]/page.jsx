@@ -42,7 +42,7 @@ const ServiceDetailPage = () => {
                 href={servicePath}
                 className={`flex items-center justify-between py-4 px-4 rounded-xl transition-all duration-300 ${
                   isActive(servicePath)
-                    ? "bg-gradient-to-br from-indigo-600 via-purple-500 to-pink-500 text-white"
+                    ? "bg-gradient-to-br from-indigo-600 via-purple-500 to-pink-500 hover:bg-gradient-to-tr text-white"
                     : "text-gray-300 hover:bg-slate-700"
                 }`}
               >
@@ -76,7 +76,7 @@ const ServiceDetailPage = () => {
             </Zoom>
 
             {/* Service Features */}
-            <div className="py-16 border-b-[1px] border-gray-500">
+            <div className="py-16 pt-10 border-b-[1px] border-gray-500">
               <Fade direction="up" triggerOnce>
                 <h1 className="text-3xl md:text-5xl lg:text-7xl bg-gradient-to-br from-blue-400 via-purple-300 to-pink-200 bg-clip-text text-transparent font-medium">
                   Service Features
@@ -115,63 +115,6 @@ const ServiceDetailPage = () => {
               </div>
             </div>
 
-            {/* Pricing Plans */}
-            <div className="py-12 border-b-[1px] border-gray-500">
-              <Fade direction="up" triggerOnce>
-                <h1 className="text-3xl md:text-5xl lg:text-7xl bg-gradient-to-br from-blue-400 via-purple-300 to-pink-200 bg-clip-text text-transparent leading-relaxed font-medium">
-                  Pricing Plans
-                </h1>
-              </Fade>
-              <Fade direction="up" triggerOnce>
-                <p className="font-light text-balance text-base sm:text-lg text-gray-300 pt-4">
-                  Choose a plan that fits your needs and budget.
-                </p>
-              </Fade>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-                {currentService.pricingPlans.map((plan, index) => (
-                  <Fade
-                    key={index}
-                    direction="up"
-                    delay={index * 300}
-                    triggerOnce
-                  >
-                    <div
-                      className={`rounded-xl p-6 shadow-lg bg-gradient-to-br from-indigo-600/30 via-purple-500/30 to-pink-500/30 text-white`}
-                    >
-                      <div className="text-center">
-                        <h2 className="text-2xl font-semibold">{plan.plan}</h2>
-                        <p className="text-3xl font-bold text-main-300">
-                          {plan.price}
-                        </p>
-                        <p className="text-sm font-light mt-2">
-                          {plan.description}
-                        </p>
-                      </div>
-
-                      <div className="mt-6">
-                        <h3 className="text-lg font-medium">Features:</h3>
-                        <ul className="mt-4 space-y-2">
-                          {plan.features.map((feature, idx) => (
-                            <li key={idx} className="flex items-center gap-2">
-                              <FaCheck className="text-green-400" /> {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="mt-4">
-                        <button
-                          type="button"
-                          class="text-white bg-gradient-to-br from-blue-800 via-purple-700 to-pink-600 hover:bg-gradient-to-tl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-2.5 text-center me-2 block w-full"
-                        >
-                          Contact Us
-                        </button>
-                      </div>
-                    </div>
-                  </Fade>
-                ))}
-              </div>
-            </div>
 
             {/* Tools & Technologies */}
             <div className="py-12 border-b-[1px] border-gray-500">
@@ -186,7 +129,7 @@ const ServiceDetailPage = () => {
                   results.
                 </p>
               </Fade>
-              <div className="flex flex-wrap gap-4 mt-12">
+              <div className="flex flex-wrap gap-4 mt-6">
                 {currentService.toolsTechnologies.map((tool, index) => (
                   <Fade
                     key={index}

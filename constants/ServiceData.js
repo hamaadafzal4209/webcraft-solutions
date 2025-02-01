@@ -4,126 +4,70 @@ export const serviceData = {
     bannerImage: "/web-development.jpg",
     subBannerImage: "/web-subbanner.jpg",
     description:
-      "Our web development services focus on creating visually appealing, user-friendly websites that deliver seamless experiences across all devices. By utilizing the latest technologies and industry best practices, we ensure your website is responsive, fast, secure, and optimized for search engines, helping your business stand out online and deliver an exceptional user experience.",
+      "Transform your online presence with our cutting-edge web development services. We create visually stunning, highly functional, and user-friendly websites that are optimized for performance, security, and search engines. From custom designs to seamless integrations, we deliver websites that drive engagement and help your business thrive in the digital landscape.",
     features: [
       {
-        title: "Responsive Design",
+        title: "Custom Web Design",
         description:
-          "Ensures your site looks great on any device, from mobile phones to desktops.",
+          "Unique, tailor-made designs that reflect your brand identity and captivate your audience.",
       },
       {
-        title: "SEO Optimization",
+        title: "Responsive Development",
         description:
-          "Implement best practices to improve visibility on search engines.",
+          "Websites that look and perform flawlessly on all devices, from desktops to smartphones.",
       },
       {
-        title: "Custom Solutions",
+        title: "E-Commerce Solutions",
         description:
-          "Tailored web development solutions designed to meet your business objectives.",
+          "Build scalable and secure online stores with seamless payment gateways and inventory management.",
       },
       {
-        title: "Performance Optimization",
+        title: "API Integrations",
         description:
-          "Fast-loading websites for better user retention and satisfaction.",
+          "Connect your website with third-party tools and services for enhanced functionality.",
       },
       {
-        title: "CMS Integration",
+        title: "Ongoing Support",
         description:
-          "Easily manage your content with powerful CMS solutions like WordPress or Joomla.",
+          "Reliable maintenance and updates to keep your website running smoothly.",
       },
     ],
     faqs: [
       {
-        question: "What is responsive web design?",
+        question: "What technologies do you use for web development?",
         answer:
-          "Responsive design ensures your website adapts to any screen size for optimal user experience.",
-      },
-      {
-        question: "How long does it take to build a website?",
-        answer:
-          "The timeline depends on the project's complexity, but typically ranges from 4-12 weeks.",
-      },
-      {
-        question: "Do you provide e-commerce development?",
-        answer:
-          "Yes, we specialize in building scalable and secure e-commerce platforms.",
+          "We use modern technologies like HTML5, CSS3, JavaScript, React, Node.js, and popular CMS platforms like WordPress and Shopify.",
       },
       {
         question: "Can you redesign an existing website?",
         answer:
-          "Absolutely! We can modernize your existing site with improved functionality and design.",
+          "Absolutely! We can revamp your current website with modern design trends and improved functionality.",
       },
       {
-        question: "What technologies do you use?",
+        question: "How long does it take to develop a website?",
         answer:
-          "We work with HTML, CSS, JavaScript, React, Angular, PHP, and various CMS platforms depending on project requirements.",
-      },
-    ],
-    pricingPlans: [
-      {
-        plan: "Basic",
-        price: "$500",
-        description:
-          "Ideal for individuals or small businesses looking to establish a simple, professional online presence.",
-        features: [
-          "Responsive Design",
-          "Basic SEO Optimization",
-          "Up to 5 Pages",
-          "Contact Form Integration",
-          "Basic Analytics Setup",
-        ],
-        deliverables: [
-          "Completion within 7 business days",
-          "One round of revisions included",
-          "Basic hosting setup guidance",
-        ],
-        support: "Email support for the first 30 days",
-        isPopular: false,
+          "The timeline varies based on complexity, but most projects are completed within 4-12 weeks.",
       },
       {
-        plan: "Standard",
-        price: "$1000",
-        description:
-          "Perfect for businesses needing a custom design and content management for regular updates.",
-        features: [
-          "All Basic Features",
-          "Custom Design Tailored to Your Brand",
-          "CMS Integration (e.g., WordPress, Webflow)",
-          "Advanced Contact Forms",
-          "Social Media Integration",
-        ],
-        deliverables: [
-          "Completion within 14 business days",
-          "Two rounds of revisions included",
-          "SEO-optimized content structure",
-        ],
-        support: "Email and chat support for the first 60 days",
-        isPopular: true,
+        question: "Do you offer SEO-friendly websites?",
+        answer:
+          "Yes, we build websites with SEO best practices to ensure better visibility on search engines.",
       },
       {
-        plan: "Premium",
-        price: "$2000",
-        description:
-          "A comprehensive solution for businesses that require advanced functionality and SEO to drive online growth.",
-        features: [
-          "All Standard Features",
-          "Advanced SEO Optimization",
-          "E-commerce Functionality (Up to 50 Products)",
-          "Custom API Integrations",
-          "Performance and Speed Optimization",
-          "Advanced Security Features",
-        ],
+        question: "What is your pricing model?",
+        answer:
+          "We offer flexible pricing based on project scope, from fixed-price packages to hourly rates.",
       },
     ],
     toolsTechnologies: [
-      "HTML",
-      "CSS",
+      "HTML5",
+      "CSS3",
       "JavaScript",
       "React",
-      "Angular",
-      "PHP",
+      "Node.js",
       "WordPress",
-      "Joomla",
+      "Shopify",
+      "MongoDB",
     ],
   },
   "/services/app-development": {
@@ -131,114 +75,59 @@ export const serviceData = {
     bannerImage: "/app-development.jpg",
     subBannerImage: "/app-subBanner.jpg",
     description:
-      "We specialize in developing custom mobile applications for iOS and Android, ensuring a user-friendly experience with scalable, secure, and high-performance features. Whether you're looking for a native or cross-platform solution, our team designs and develops apps that are tailored to your business needs, helping you engage with customers and grow your brand on mobile.",
+      "Empower your business with custom mobile applications designed to deliver exceptional user experiences. Whether you need a native or cross-platform app, our team leverages the latest technologies to build scalable, secure, and high-performance solutions that align with your business goals and engage your audience effectively.",
     features: [
       {
-        title: "Cross-Platform Development",
+        title: "Native App Development",
         description:
-          "Build apps that work seamlessly on iOS and Android with a single codebase.",
+          "High-performance apps built specifically for iOS and Android platforms.",
       },
       {
-        title: "User-Centric Design",
+        title: "Cross-Platform Apps",
         description:
-          "Ensure intuitive navigation and an exceptional user experience.",
+          "Cost-effective solutions that work seamlessly across multiple platforms.",
       },
       {
-        title: "Advanced Security",
+        title: "UI/UX Design",
         description:
-          "Secure apps with encryption, authentication, and robust security protocols.",
+          "Intuitive and visually appealing designs that enhance user engagement.",
       },
       {
-        title: "Scalable Solutions",
-        description: "Apps designed to scale with your growing business needs.",
+        title: "Cloud Integration",
+        description:
+          "Integrate cloud services for scalable storage and real-time data synchronization.",
       },
       {
-        title: "Integration Capabilities",
+        title: "App Maintenance",
         description:
-          "Easily integrate your app with existing software and APIs.",
+          "Ongoing support to ensure your app stays updated and bug-free.",
       },
     ],
     faqs: [
       {
-        question: "What platforms do you support?",
+        question: "What platforms do you develop apps for?",
         answer:
           "We develop apps for iOS, Android, and cross-platform frameworks like Flutter and React Native.",
       },
       {
-        question: "How long does it take to develop an app?",
+        question: "How do you ensure app security?",
         answer:
-          "The timeline depends on the complexity, typically ranging from 8-20 weeks.",
+          "We implement robust security measures, including encryption, secure APIs, and regular vulnerability testing.",
       },
       {
-        question: "Do you provide maintenance and support?",
+        question: "Can you integrate third-party services?",
         answer:
-          "Yes, we offer ongoing support and updates to ensure your app stays functional and up-to-date.",
+          "Yes, we can integrate payment gateways, social media, and other third-party APIs.",
       },
       {
-        question: "Can you develop enterprise-grade apps?",
+        question: "What is your app development process?",
         answer:
-          "Yes, we specialize in creating scalable and robust apps for enterprises.",
+          "Our process includes discovery, design, development, testing, and deployment, followed by ongoing support.",
       },
       {
-        question: "Do you handle app store submissions?",
+        question: "Do you provide post-launch support?",
         answer:
-          "Yes, we handle the entire app store submission process for both Apple App Store and Google Play.",
-      },
-    ],
-    pricingPlans: [
-      {
-        plan: "Basic",
-        price: "$500",
-        description:
-          "Ideal for individuals or small businesses looking to establish a simple, professional online presence.",
-        features: [
-          "Responsive Design",
-          "Basic SEO Optimization",
-          "Up to 5 Pages",
-          "Contact Form Integration",
-          "Basic Analytics Setup",
-        ],
-        deliverables: [
-          "Completion within 7 business days",
-          "One round of revisions included",
-          "Basic hosting setup guidance",
-        ],
-        support: "Email support for the first 30 days",
-        isPopular: false,
-      },
-      {
-        plan: "Standard",
-        price: "$1000",
-        description:
-          "Perfect for businesses needing a custom design and content management for regular updates.",
-        features: [
-          "All Basic Features",
-          "Custom Design Tailored to Your Brand",
-          "CMS Integration (e.g., WordPress, Webflow)",
-          "Advanced Contact Forms",
-          "Social Media Integration",
-        ],
-        deliverables: [
-          "Completion within 14 business days",
-          "Two rounds of revisions included",
-          "SEO-optimized content structure",
-        ],
-        support: "Email and chat support for the first 60 days",
-        isPopular: true,
-      },
-      {
-        plan: "Premium",
-        price: "$2000",
-        description:
-          "A comprehensive solution for businesses that require advanced functionality and SEO to drive online growth.",
-        features: [
-          "All Standard Features",
-          "Advanced SEO Optimization",
-          "E-commerce Functionality (Up to 50 Products)",
-          "Custom API Integrations",
-          "Performance and Speed Optimization",
-          "Advanced Security Features",
-        ],
+          "Yes, we offer maintenance and updates to ensure your app remains functional and up-to-date.",
       },
     ],
     toolsTechnologies: [
@@ -247,8 +136,9 @@ export const serviceData = {
       "Swift",
       "Kotlin",
       "Firebase",
-      "MongoDB",
+      "AWS",
       "Node.js",
+      "MongoDB",
     ],
   },
   "/services/digital-marketing": {
@@ -256,114 +146,59 @@ export const serviceData = {
     bannerImage: "/digital-marketing.jpg",
     subBannerImage: "/digital-subBanner.jpg",
     description:
-      "Our digital marketing services provide tailored strategies to boost your online presence through social media management, paid advertising, content marketing, and more. We focus on driving targeted traffic, building brand awareness, and increasing conversions by optimizing campaigns based on detailed analytics and insights to ensure maximum return on investment.",
+      "Elevate your brand with our comprehensive digital marketing services. From social media management to paid advertising and content marketing, we craft data-driven strategies to increase your online visibility, engage your target audience, and drive measurable results. Let us help you grow your business and achieve your marketing goals.",
     features: [
       {
-        title: "Social Media Management",
+        title: "Social Media Marketing",
         description:
-          "Enhance your online presence across all major social platforms.",
+          "Boost engagement and brand awareness with tailored social media campaigns.",
       },
       {
-        title: "PPC Campaigns",
+        title: "Pay-Per-Click (PPC) Advertising",
         description:
-          "Deliver targeted ads to reach your ideal audience effectively.",
+          "Drive targeted traffic with highly optimized PPC campaigns on Google, Facebook, and more.",
       },
       {
-        title: "Content Marketing",
+        title: "Content Strategy",
         description:
-          "Engage your audience with tailored and valuable content strategies.",
-      },
-      {
-        title: "Analytics and Reporting",
-        description: "Get detailed insights to optimize campaign performance.",
+          "Create compelling content that resonates with your audience and drives conversions.",
       },
       {
         title: "Email Marketing",
         description:
-          "Engage with your audience through customized email campaigns.",
+          "Nurture leads and retain customers with personalized email campaigns.",
+      },
+      {
+        title: "Analytics and Reporting",
+        description:
+          "Track performance and optimize campaigns with detailed insights and reports.",
       },
     ],
     faqs: [
       {
+        question: "What platforms do you specialize in?",
+        answer:
+          "We manage campaigns on Google Ads, Facebook, Instagram, LinkedIn, and other major platforms.",
+      },
+      {
         question: "How do you measure campaign success?",
         answer:
-          "We use metrics such as engagement rates, conversion rates, and ROI to evaluate success.",
+          "We use KPIs like ROI, CTR, conversion rates, and engagement metrics to evaluate success.",
       },
       {
-        question: "Can you help with branding?",
+        question: "Can you handle local SEO?",
         answer:
-          "Yes, we provide services like brand strategy, logo design, and market positioning.",
+          "Yes, we optimize for local searches and manage Google My Business profiles.",
       },
       {
-        question: "What platforms do you advertise on?",
+        question: "Do you offer content creation services?",
         answer:
-          "We run campaigns on Google, Facebook, Instagram, LinkedIn, and more.",
+          "Yes, we create blogs, videos, infographics, and other content tailored to your audience.",
       },
       {
-        question: "How do you target the right audience?",
+        question: "What industries do you serve?",
         answer:
-          "We conduct detailed market research and use analytics tools to identify and target the right demographics.",
-      },
-      {
-        question: "Do you provide SEO services?",
-        answer:
-          "Yes, we offer comprehensive SEO strategies as part of our digital marketing services.",
-      },
-    ],
-    pricingPlans: [
-      {
-        plan: "Basic",
-        price: "$500",
-        description:
-          "Ideal for individuals or small businesses looking to establish a simple, professional online presence.",
-        features: [
-          "Responsive Design",
-          "Basic SEO Optimization",
-          "Up to 5 Pages",
-          "Contact Form Integration",
-          "Basic Analytics Setup",
-        ],
-        deliverables: [
-          "Completion within 7 business days",
-          "One round of revisions included",
-          "Basic hosting setup guidance",
-        ],
-        support: "Email support for the first 30 days",
-        isPopular: false,
-      },
-      {
-        plan: "Standard",
-        price: "$1000",
-        description:
-          "Perfect for businesses needing a custom design and content management for regular updates.",
-        features: [
-          "All Basic Features",
-          "Custom Design Tailored to Your Brand",
-          "CMS Integration (e.g., WordPress, Webflow)",
-          "Advanced Contact Forms",
-          "Social Media Integration",
-        ],
-        deliverables: [
-          "Completion within 14 business days",
-          "Two rounds of revisions included",
-          "SEO-optimized content structure",
-        ],
-        support: "Email and chat support for the first 60 days",
-        isPopular: true,
-      },
-      {
-        plan: "Premium",
-        price: "$2000",
-        description:
-          "A comprehensive solution for businesses that require advanced functionality and SEO to drive online growth.",
-        features: [
-          "All Standard Features",
-          "Advanced SEO Optimization",
-          "E-commerce Functionality (Up to 50 Products)",
-          "Custom API Integrations",
-          "Performance and Speed Optimization",
-          "Advanced Security Features",
-        ],
+          "We work with businesses across industries, including e-commerce, healthcare, real estate, and more.",
       },
     ],
     toolsTechnologies: [
@@ -371,10 +206,10 @@ export const serviceData = {
       "Facebook Ads Manager",
       "HubSpot",
       "Hootsuite",
-      "Canva",
       "Google Analytics",
-      "Ahrefs",
       "SEMrush",
+      "Mailchimp",
+      "Canva",
     ],
   },
   "/services/seo-campaign": {
@@ -382,114 +217,59 @@ export const serviceData = {
     bannerImage: "/SEO-campaign.jpg",
     subBannerImage: "/seo=subBanner.jpg",
     description:
-      "Our SEO services enhance your website’s visibility on search engines through targeted keyword optimization, content enhancements, and link-building strategies. We focus on improving both on-page and off-page elements, including local SEO, to increase organic traffic and drive qualified leads, helping your business grow sustainably in competitive online markets.",
+      "Unlock your website’s full potential with our expert SEO services. We optimize your site for search engines through keyword research, on-page and off-page SEO, technical improvements, and content strategies. Our goal is to increase your organic traffic, improve rankings, and drive sustainable growth for your business.",
     features: [
       {
         title: "Keyword Research",
         description:
-          "Identify and optimize for the most relevant and profitable keywords.",
+          "Identify high-value keywords to target your ideal audience effectively.",
       },
       {
-        title: "On-Page SEO",
-        description: "Improve content, metadata, and overall site structure.",
-      },
-      {
-        title: "Off-Page SEO",
+        title: "On-Page Optimization",
         description:
-          "Boost authority with high-quality backlinks and outreach.",
+          "Optimize meta tags, headers, and content for better search engine visibility.",
       },
       {
-        title: "Local SEO",
+        title: "Link Building",
         description:
-          "Enhance visibility for local searches and Google My Business optimization.",
+          "Build high-quality backlinks to improve domain authority and rankings.",
       },
       {
         title: "Technical SEO",
         description:
-          "Resolve website issues like speed, mobile-friendliness, and crawl errors.",
+          "Enhance site speed, mobile-friendliness, and crawlability for better performance.",
+      },
+      {
+        title: "Local SEO",
+        description:
+          "Optimize for local searches and improve visibility in your geographic area.",
       },
     ],
     faqs: [
       {
         question: "How long does it take to see SEO results?",
         answer:
-          "Results typically take 3-6 months, depending on competition and market conditions.",
+          "SEO is a long-term strategy, and results typically appear within 3-6 months.",
       },
       {
         question: "What tools do you use for SEO?",
         answer:
-          "We use industry-standard tools like Google Analytics, SEMrush, Ahrefs, and Moz.",
+          "We use tools like SEMrush, Ahrefs, Google Search Console, and Moz for analysis and optimization.",
       },
       {
-        question: "Do you provide SEO audits?",
+        question: "Do you provide monthly SEO reports?",
         answer:
-          "Yes, we provide detailed audits to identify issues and recommend improvements.",
+          "Yes, we provide detailed reports on rankings, traffic, and other key metrics.",
       },
       {
-        question: "Can you help with content creation for SEO?",
+        question: "Can you help with international SEO?",
         answer:
-          "Yes, our team creates optimized content, including blogs, articles, and landing pages.",
+          "Yes, we optimize websites for global audiences with multilingual and region-specific strategies.",
       },
       {
-        question: "What industries do you serve for SEO?",
+        question: "What is your approach to content optimization?",
         answer:
-          "We provide SEO services across various industries, including e-commerce, technology, healthcare, and more.",
-      },
-    ],
-    pricingPlans: [
-      {
-        plan: "Basic",
-        price: "$500",
-        description:
-          "Ideal for individuals or small businesses looking to establish a simple, professional online presence.",
-        features: [
-          "Responsive Design",
-          "Basic SEO Optimization",
-          "Up to 5 Pages",
-          "Contact Form Integration",
-          "Basic Analytics Setup",
-        ],
-        deliverables: [
-          "Completion within 7 business days",
-          "One round of revisions included",
-          "Basic hosting setup guidance",
-        ],
-        support: "Email support for the first 30 days",
-        isPopular: false,
-      },
-      {
-        plan: "Standard",
-        price: "$1000",
-        description:
-          "Perfect for businesses needing a custom design and content management for regular updates.",
-        features: [
-          "All Basic Features",
-          "Custom Design Tailored to Your Brand",
-          "CMS Integration (e.g., WordPress, Webflow)",
-          "Advanced Contact Forms",
-          "Social Media Integration",
-        ],
-        deliverables: [
-          "Completion within 14 business days",
-          "Two rounds of revisions included",
-          "SEO-optimized content structure",
-        ],
-        support: "Email and chat support for the first 60 days",
-        isPopular: true,
-      },
-      {
-        plan: "Premium",
-        price: "$2000",
-        description:
-          "A comprehensive solution for businesses that require advanced functionality and SEO to drive online growth.",
-        features: [
-          "All Standard Features",
-          "Advanced SEO Optimization",
-          "E-commerce Functionality (Up to 50 Products)",
-          "Custom API Integrations",
-          "Performance and Speed Optimization",
-          "Advanced Security Features",
-        ],
+          "We create and optimize content to align with user intent and search engine algorithms.",
       },
     ],
     toolsTechnologies: [
@@ -499,8 +279,8 @@ export const serviceData = {
       "Moz",
       "Yoast SEO",
       "Screaming Frog",
-      "Ubersuggest",
       "Google Analytics",
+      "Ubersuggest",
     ],
   },
 };
