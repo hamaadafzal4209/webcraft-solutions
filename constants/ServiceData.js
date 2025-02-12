@@ -68,6 +68,7 @@ export const serviceData = {
       "WordPress",
       "Shopify",
       "MongoDB",
+      "Ecommerce Management"
     ],
   },
   "/services/app-development": {

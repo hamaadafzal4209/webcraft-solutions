@@ -232,6 +232,13 @@ const Header = () => {
                           App Development
                         </Link>
                         <Link
+                          href="/services/web-development"
+                          className="block px-3 py-1.5 hover:text-main-400 transition-colors duration-200"
+                          onClick={handleLinkClick}
+                        >
+                          Software Development
+                        </Link>
+                        <Link
                           href="/services/digital-marketing"
                           className="block px-3 py-1.5 hover:text-main-400 transition-colors duration-200"
                           onClick={handleLinkClick}

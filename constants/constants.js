@@ -3,7 +3,7 @@ export const accordionData = [
     title: "Web Development",
     description:
       "We create responsive, high-performance websites tailored to your business needs, ensuring a seamless user experience across all devices.",
-    tags: ["Frontend", "Backend", "Fullstack"],
+    tags: ["WordPress","Shopify", "Ecommerce" ,"Frontend", "Backend", "Fullstack"],
     image: "/web-development.jpg",
   },
   {
@@ -17,7 +17,7 @@ export const accordionData = [
     title: "Digital Marketing",
     description:
       "We provide comprehensive digital marketing services that increase your online presence, drive traffic, and boost conversions across various channels.",
-    tags: ["PPC", "Email Marketing", "Social Ads"],
+    tags: ["Social Ads", "Email Marketing","PPC"],
     image: "/img3.jpg",
   },
   {
