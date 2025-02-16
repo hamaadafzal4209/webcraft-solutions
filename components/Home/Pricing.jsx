@@ -52,9 +52,9 @@ export default function PricingCards() {
           filteredPlans.map((plan, index) => (
             <div
               key={index}
-              className="p-[2px] bg-gradient-to-br from-blue-800 via-purple-700 to-pink-600 rounded-3xl"
+              className="p-[2px] bg-gradient-to-br from-blue-800 via-purple-700 to-pink-600 rounded-3xl h-full"
             >
-              <div className="p-6 bg-gray-900 rounded-3xl shadow-xl">
+              <div className="p-6 bg-gray-900 rounded-3xl shadow-xl h-full flex flex-col">
                 <h3 className="text-3xl font-extrabold mb-3">{plan.name}</h3>
                 <p className="text-gray-500 line-through text-lg">
                   {plan.originalPrice}
@@ -73,7 +73,7 @@ export default function PricingCards() {
                   </button>
                 </Link>
 
-                <ul className="my-4 space-y-3">
+                <ul className="my-4 space-y-3 flex-grow">
                   {plan.specs
                     .slice(0, specsExpanded[index] ? plan.specs.length : 5)
                     .map((spec, i) => (
