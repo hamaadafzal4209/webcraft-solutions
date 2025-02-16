@@ -7,6 +7,7 @@ import Testimonial from "@/components/Home/Testimonial";
 import WhoWeAre from "@/components/Home/WhoWeAre";
 import WhyChooseUs from "@/components/Home/WhyChooseUs";
 import React from "react";
+import PricingCards from "../components/Home/Pricing";
 
 const page = () => {
   return (
@@ -14,6 +15,7 @@ const page = () => {
       <Hero />
       <WhoWeAre />
       <Services />
+      <PricingCards />
       <WhyChooseUs />
       <Projects />
       <Team />
