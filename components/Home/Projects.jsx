@@ -3,6 +3,7 @@ import SectionHeader from "../common/SectionHeader";
 import Image from "next/image";
 import { projectData } from "@/constants/projectsData";
 import { Fade } from "react-awesome-reveal";
+import { ExternalLink } from "lucide-react";
 
 const Projects = () => {
   return (
@@ -12,7 +13,7 @@ const Projects = () => {
 
         <div className="px-4 md:px-8 py-20 pt-16 rounded-lg shadow-lg relative">
           <SectionHeader
-            title="Selected works"
+            title="Selected Works"
             text="Crafting Excellence Every Single Time"
           />
 
@@ -22,23 +23,27 @@ const Projects = () => {
                 key={project.id}
                 direction="up"
                 triggerOnce
-                delay={index * 100} 
+                delay={index * 100}
               >
-                <div
-                  className={`rounded-xl shadow-lg overflow-hidden bg-gradient-to-bl from-blue-800 via-purple-700 to-pink-600`}
-                >
-                  <Image
-                    src={project.imageUrl}
-                    alt={project.title}
-                    width={1000}
-                    height={1000}
-                    className="w-full h-72 rounded-xl object-cover"
-                  />
-                  <div className={`p-4`}>
-                    <h2 className="text-lg sm:text-xl font-semibold truncate font-poppins">
+                <div className="relative group overflow-hidden rounded-xl shadow-lg border border-gray-700 bg-gradient-to-br from-slate-800 to-slate-900 ">
+                  <div className="relative">
+                    <Image
+                      src={project.imageUrl}
+                      alt={project.title}
+                      width={1000}
+                      height={1000}
+                      className="w-full h-60 object-cover rounded-t-xl"
+                    />
+                    <div className="absolute right-4 top-4 cursor-pointer bg-black h-8 w-8 flex items-center justify-center rounded-full transition-transform duration-300 hover:bg-main-300">
+                      <ExternalLink size={16} className="text-white" />
+                    </div>
+                  </div>
+
+                  <div className="p-4 text-white">
+                    <h2 className="text-lg sm:text-xl font-semibold truncate">
                       {project.title}
                     </h2>
-                    <p className="text-sm font-normal truncate">
+                    <p className="text-sm text-gray-300 truncate">
                       {project.description}
                     </p>
                   </div>
