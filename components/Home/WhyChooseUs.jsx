@@ -34,13 +34,13 @@ const WhyChooseUs = () => {
             <div className="bg-slate-700 p-6 rounded-xl flex flex-col justify-between h-full min-h-80">
               <div className="flex items-center gap-4">
                 <div className="w-2 h-2 rounded-full bg-main-300"></div>
-                <p>projects completed</p>
+                <p>Projects Delivered</p>
               </div>
               <div>
-                <h2 className="text-5xl font-bold font-sans">475 +</h2>
+                <h2 className="text-5xl font-bold font-sans">150+</h2>
                 <h2 className="text-base pt-2 text-gray-100 text-balance">
-                  Over 400 successful projects delivered to our clients
-                  worldwide.
+                  Successfully completed over 150 projects, helping businesses
+                  establish a strong digital presence.
                 </h2>
               </div>
             </div>
@@ -50,12 +50,13 @@ const WhyChooseUs = () => {
             <div className="bg-slate-700 p-6 rounded-xl flex flex-col justify-between h-full min-h-80">
               <div className="flex items-center gap-4">
                 <div className="w-2 h-2 rounded-full bg-main-300"></div>
-                <p>satisfied customers</p>
+                <p>Client Satisfaction Rate</p>
               </div>
               <div>
-                <h2 className="text-5xl font-bold font-sans">98%</h2>
+                <h2 className="text-5xl font-bold font-sans">95%</h2>
                 <h2 className="text-base pt-2 text-gray-100 text-balance">
-                  A 98% satisfaction rate across all our consulting services.
+                  Maintaining a 95% client satisfaction rate by delivering
+                  high-quality solutions tailored to business needs.
                 </h2>
               </div>
             </div>
@@ -65,13 +66,13 @@ const WhyChooseUs = () => {
             <div className="bg-slate-700 p-6 rounded-xl flex flex-col justify-between h-full min-h-80">
               <div className="flex items-center gap-4">
                 <div className="w-2 h-2 rounded-full bg-main-300"></div>
-                <p>hours saved</p>
+                <p>Hours Optimized</p>
               </div>
               <div>
-                <h2 className="text-5xl font-bold font-sans">843 +</h2>
+                <h2 className="text-5xl font-bold font-sans">25k+</h2>
                 <h2 className="text-base pt-2 text-gray-100 text-balance">
-                  Our strategies have saved clients over 800,000 hours
-                  collectively.
+                  Our efficient strategies have helped clients save over 25,000
+                  hours in operations and processes.
                 </h2>
               </div>
             </div>

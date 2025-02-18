@@ -17,11 +17,33 @@ const ContactPage = () => {
     message: Yup.string().required("Message is required"),
   });
 
-  const onSubmit = (values, { resetForm }) => {
-    console.log("Form Data:", values);
-    toast.success("Form submitted successfully!");
-    resetForm();
+  const handleSubmit = async (values, { resetForm }) => {
+    try {
+      const subject = `${values.firstName} sent a message from website`;
+
+      const formData = { ...values, access_key: "2a22a635-d6bf-401b-ac51-bf36d5ec10fe", subject };
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        toast.success("Form submitted successfully!");
+        resetForm();
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      toast.error("An error occurred. Please try again.");
+    }
   };
+
 
   return (
     <div>
@@ -45,7 +67,7 @@ const ContactPage = () => {
               message: "",
             }}
             validationSchema={validationSchema}
-            onSubmit={onSubmit}
+            onSubmit={handleSubmit}
           >
             {({ isSubmitting }) => (
               <Form>

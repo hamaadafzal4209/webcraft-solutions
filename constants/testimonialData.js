@@ -1,38 +1,32 @@
 export const testimonials = [
   {
     content:
-      "This product has completely transformed our workflow. It's intuitive, powerful, and a joy to use every day.",
-    author: "Alex Johnson",
-    role: "Product Manager",
+      "WebCraft delivered beyond our expectations. Their expertise and attention to detail made our website a success.",
+    author: "James Anderson",
+    role: "Marketing Director",
   },
   {
     content:
-      "I can't imagine running my business without this tool. It's been a game-changer for our team's productivity.",
-    author: "Samantha Lee",
-    role: "CEO",
+      "Thanks to WebCraft, our online presence has skyrocketed. Their SEO and digital marketing strategies truly work!",
+    author: "Sarah Thompson",
+    role: "Business Owner",
   },
   {
     content:
-      "The customer support is outstanding. They've been incredibly helpful and responsive to all our needs.",
-    author: "Michael Chen",
-    role: "IT Director",
+      "The team at WebCraft is incredibly talented and professional. They transformed our vision into a seamless, user-friendly app.",
+    author: "David Martinez",
+    role: "Startup Founder",
   },
   {
     content:
-      "The customer support is outstanding. They've been incredibly helpful and responsive to all our needs.",
-    author: "Michael Chen",
-    role: "IT Director",
+      "WebCraft's support is outstanding. They provided timely updates and ensured everything ran smoothly post-launch.",
+    author: "Emily White",
+    role: "Operations Manager",
   },
   {
     content:
-      "The customer support is outstanding. They've been incredibly helpful and responsive to all our needs.",
-    author: "Michael Chen",
-    role: "IT Director",
-  },
-  {
-    content:
-      "The customer support is outstanding. They've been incredibly helpful and responsive to all our needs.",
-    author: "Michael Chen",
-    role: "IT Director",
+      "Our eCommerce sales have increased significantly since WebCraft revamped our Shopify store. Highly recommend their services!",
+    author: "Michael Brown",
+    role: "Ecommerce Manager",
   },
 ];

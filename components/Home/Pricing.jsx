@@ -26,7 +26,7 @@ export default function PricingCards() {
         text="Select the Best Hosting Plan"
       />
 
-      <div className="flex justify-center my-8">
+      <div className="flex md:justify-center mb-8 md:my-8">
         {["web", "cloud", "vps"].map((tab) => (
           <button
             key={tab}

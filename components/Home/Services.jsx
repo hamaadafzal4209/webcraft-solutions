@@ -57,7 +57,7 @@ const Services = () => {
                   alt="Service Image"
                   width={1000}
                   height={1000}
-                  className="object-cover rounded-md w-full h-full"
+                  className="object-cover rounded-md w-full h-[700px]"
                 />
               </motion.div>
             </div>
